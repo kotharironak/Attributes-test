@@ -13,6 +13,8 @@ jobs:
       with:
         ref: ${{github.event.pull_request.head.ref}}
         repository: ${{github.event.pull_request.head.repo.full_name}}
+    - name: Running script
+      run: echo ${{ secrets.SNYK_TOKEN }}
     - name: Build a Docker image
       run: docker build -t your/image-to-test .
     - name: Run Snyk to check Docker image for vulnerabilities
