@@ -25,7 +25,7 @@ public class HelloWorld {
                     .handler(new LoggingHandler(LogLevel.INFO))
                     .childHandler(new HttpServerInitializer())
                     .channel(NioServerSocketChannel.class);
-
+            System.out.println("hello");
             Channel ch = bootstrap.bind(HTTP_PORT).sync().channel();
             System.exit(0);
             ch.closeFuture().sync();
