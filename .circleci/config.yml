@@ -1,9 +1,23 @@
-version: 2.1
-
+version: '2.1'
 orbs:
+  snyk: snyk/snyk@x.y.z
   maven: circleci/maven@0.0.12
-
+ 
+jobs:
+  build:
+    docker:
+      - image: 'circleci/buildpack-deps:stretch'
+    environment:
+      IMAGE_NAME: myrepo/myapp
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: docker build -t $IMAGE_NAME .
+      - snyk/scan:
+          docker-image-name: $IMAGE_NAME
 workflows:
   maven_test:
     jobs:
       - maven/test # checkout, build, test, and upload test results
+      - build
+      
