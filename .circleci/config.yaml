@@ -1,0 +1,16 @@
+version: '2.1'
+orbs:
+  snyk: snyk/snyk@x.y.z
+jobs:
+  build:
+    docker:
+      - image: 'circleci/buildpack-deps:stretch'
+    environment:
+      IMAGE_NAME: myrepo/myapp
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: docker build -t $IMAGE_NAME .
+      - snyk/scan:
+          docker-image-name: $IMAGE_NAME
+workflows: null
