@@ -20,4 +20,3 @@ workflows:
     jobs:
       - maven/test # checkout, build, test, and upload test results
       - build
-      
