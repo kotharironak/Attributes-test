@@ -1,0 +1,20 @@
+name: Snyk Container
+on:
+  push:
+    branches:
+      - main
+  pull_request_target:
+  
+jobs:
+  snyk:
+    runs-on: ubuntu-latest
+    if: >
+      github.event_name == 'push' ||
+      github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name != github.repository
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{github.event.pull_request.head.ref}}
+        repository: ${{github.event.pull_request.head.repo.full_name}}
+    - name: Running script
+      run: ./.github/workflows/test.sh
