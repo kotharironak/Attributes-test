@@ -17,11 +17,12 @@ jobs:
       with:
         ref: ${{github.event.pull_request.head.ref}}
         repository: ${{github.event.pull_request.head.repo.full_name}}
-    - name: Running script
-      run: ./.github/workflows/test.sh
     - name: Option1 for gettign branch
       if: github.event_name == 'push' 
+      run: | 
+        BRANCH="${GITHUB_REF#refs/heads/}"
+        echo "BRANCH=${BRANCH}" >> $GITHUB_ENV
+        ./.github/workflows/test.sh
+    - name: Running script
       run: ./.github/workflows/test.sh
-      env:
-        GITHUB_BRANCH: ${GITHUB_REF##*/}
 
