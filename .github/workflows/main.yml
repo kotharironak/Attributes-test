@@ -23,10 +23,5 @@ jobs:
       if: github.event_name == 'push' 
       run: ./.github/workflows/test.sh
       env:
-        GITHUB_BRANCh_1: ${{ github.ref }}
-    - name: Options2 for getting 
-      if: github.event_name == 'push' 
-      run: ./.github/workflows/test.sh
-      env:
-        GITHUB_BRANCH_2: $(echo ${GITHUB_REF#refs/heads/})      
+        GITHUB_BRANCH: ${GITHUB_REF##*/}
 
