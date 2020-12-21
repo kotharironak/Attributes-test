@@ -1,4 +1,4 @@
 #!/bin/bash
 echo "hello, Ronak!"
-#printenv
+printenv
 echo "Hello, Jayesh!"
