@@ -26,5 +26,8 @@ jobs:
     - name: Options2 for getting 
       run: ./.github/workflows/test.sh
       env:
-        GITHUB_BRANCH_2: $(echo ${GITHUB_REF#refs/heads/}) 
+        GITHUB_BRANCH_2: $(echo ${GITHUB_REF#refs/heads/})      
+    - uses: nelonoel/branch-name@v1
+    # Use branch name for whatever purpose
+    - run: ./.github/workflows/test.sh
 
