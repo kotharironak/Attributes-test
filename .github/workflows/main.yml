@@ -19,4 +19,12 @@ jobs:
         repository: ${{github.event.pull_request.head.repo.full_name}}
     - name: Running script
       run: ./.github/workflows/test.sh
+    - name: Option1 for gettign branch
+      run: echo "${GITHUB_BRANCH_1##*/}"
+      env:
+        GITHUB_BRANCh_1: ${{ github.ref }}
+    - name: Options2 for getting 
+      run: echo "${GITHUB_BRANCH_2}"
+      env:
+        GITHUB_BRANCH_2: $(echo ${GITHUB_REF#refs/heads/}) 
 
