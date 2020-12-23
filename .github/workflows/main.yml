@@ -20,7 +20,7 @@ jobs:
         repository: ${{github.event.pull_request.head.repo.full_name}}
     - name: Option1 for gettign branch
       run: | 
-        BRANCH="${echo ${GITHUB_REF} | cut -d/ -f 3}"
+        BRANCH=$(echo ${GITHUB_REF} | cut -d/ -f 3)
         echo "BRANCH=${BRANCH}" >> $GITHUB_ENV
         ./.github/workflows/test.sh
 
