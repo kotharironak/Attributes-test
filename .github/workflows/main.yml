@@ -23,4 +23,6 @@ jobs:
         BRANCH=$(echo ${GITHUB_REF} | cut -d/ -f 3)
         echo "BRANCH=${BRANCH}" >> $GITHUB_ENV
         ./.github/workflows/test.sh
+    - name: Running script
+      run: ./.github/workflows/test.sh
 
