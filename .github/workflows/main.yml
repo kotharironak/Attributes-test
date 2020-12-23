@@ -5,6 +5,10 @@ on:
       - main
   pull_request:
     types: [assigned, opened, synchronize, reopened, closed]
+  release:
+    types:
+      - created
+    
 
 jobs:
   snyk-main:
