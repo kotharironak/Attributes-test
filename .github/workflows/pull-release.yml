@@ -14,36 +14,36 @@ jobs:
     steps:
       - name: Get latest stable 
         id: kafka
-        uses: pozetroninc/github-action-get-latest-release@master
+        uses: oprypin/find-latest-tag@v1
         with:
-          repository: hypertrace/attribute-service
-      - run: echo "latest stable release ${{ steps.kafka.outputs.release }}"
+          repository: hypertrace/kafka
+      - run: echo "latest stable release ${{ steps.kafka.outputs.tag }}"
 
       - name: Get latest stable 
         id: zookeeper
-        uses: pozetroninc/github-action-get-latest-release@master
+        uses: oprypin/find-latest-tag@v1
         with:
           repository: hypertrace/zookeeper
-      - run: echo "latest stable release ${{ steps.zookeeper.outputs.release }}"
+      - run: echo "latest stable release ${{ steps.zookeeper.outputs.tag }}"
 
       - name: Get latest stable 
         id: pinot
-        uses: pozetroninc/github-action-get-latest-release@master
+        uses: oprypin/find-latest-tag@v1
         with:
           repository: hypertrace/pinot
-      - run: echo "latest stable release ${{ steps.pinot.outputs.release }}"
+      - run: echo "latest stable release ${{ steps.pinot.outputs.tag }}"
 
       - name: Get latest stable 
         id: schema-registry
-        uses: pozetroninc/github-action-get-latest-release@master
+        uses: oprypin/find-latest-tag@v1
         with:
           repository: hypertrace/schema-registry
-      - run: echo "latest stable release ${{ steps.kafka.outputs.release }}"
+      - run: echo "latest stable release ${{ steps.schema-registry.outputs.tag }}"
 
       - name: Get latest stable 
         id: mongodb
-        uses: pozetroninc/github-action-get-latest-release@master
+        uses: oprypin/find-latest-tag@v1
         with:
           repository: hypertrace/mongodb
-      - run: echo "latest stable release ${{ steps.mongodb.outputs.release }}"
+      - run: echo "latest stable release ${{ steps.mongodb.outputs.tag }}"
 
