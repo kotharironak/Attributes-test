@@ -1,6 +1,6 @@
 apiVersion: v2
-name: hypertrace-data-services
-description: Hypertrace Distributed Tracing Platform - Data services helm chart
+name: hypertrace-platform-services
+description: Hypertrace Distributed Tracing Platform - Platform servcies helm chart
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -49,10 +49,14 @@ dependencies:
     version: 0.9.3
   - name: gateway-service
     repository: "https://storage.googleapis.com/hypertrace-helm-charts"
-    version: 0.1.46
+    version: 0.1.45
   - name: query-service
     repository: "https://storage.googleapis.com/hypertrace-helm-charts"
     version: 0.5.3
   - name: entity-service
     repository: "https://storage.googleapis.com/hypertrace-helm-charts"
-    version: 0.5.4
+    version: 0.5.3
+  - name: kafka-topic-creator
+    repository: "https://storage.googleapis.com/hypertrace-helm-charts"
+    version: 0.1.7
+    condition: kafka-topic-creator.enabled
