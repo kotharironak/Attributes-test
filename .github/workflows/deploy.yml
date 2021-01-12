@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: start minikube
-        run: minikube start -cpus 2 --memory 6144
+        run: minikube start --cpus 2 --memory 6144
       - name: see contextx
         run: kubectl config get-contexts 
       - name: see current context
