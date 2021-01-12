@@ -22,7 +22,7 @@ update_data_services_charts() {
         echo '  - name: schema-registry'
         echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $schema_registry_version
-        echo '  - name: kafka'
+        echo '  - name: mongodb'
         echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $mongodb_version
 } 
@@ -64,6 +64,10 @@ update_platform_services_charts() {
         echo '  - name: entity-service'
         echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $entity_service_version
+        echo '  - name: kafka-topic-creator'
+        echo '    repository:' $HELM_GCS_REPO
+        echo '    version:' 0.1.7
+        echo '    condition: kafka-topic-creator.enabled'
 } 
 
 
