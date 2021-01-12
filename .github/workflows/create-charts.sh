@@ -1,5 +1,5 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-HELM_GCS_REPO="https://storage.googleapis.com/hypertrace-helm-charts"
+HELM_GCS_REPO='"https://storage.googleapis.com/hypertrace-helm-charts"'
 
 print_header() {
     cat ".github/workflows/header.txt"
@@ -11,19 +11,19 @@ update_data_services_charts() {
         echo ""
         echo 'dependencies:'
         echo '  - name: kafka'
-        echo '    repository:' "$HELM_GCS_REPO"
+        echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $kafka_version 
         echo '  - name: zookeeper'
-        echo '    repository:' "$HELM_GCS_REPO"
+        echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $zookeeper_version
         echo '  - name: pinot'
-        echo '    repository:' "$HELM_GCS_REPO"
+        echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $pinot_version 
         echo '  - name: schema-registry'
-        echo '    repository:' "$HELM_GCS_REPO"
+        echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $schema_registry_version
         echo '  - name: kafka'
-        echo '    repository:' "$HELM_GCS_REPO"
+        echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $mongodb_version
 } 
 
@@ -32,37 +32,37 @@ update_platform_services_charts() {
         echo ""
         echo 'dependencies:'
         echo '  - name: hypertrace-oc-collector'
-        echo '    repository:' "$HELM_GCS_REPO"
+        echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $hypertrace_oc_collector_version 
         echo '  - name: span-normalizer'
-        echo '    repository:' "$HELM_GCS_REPO"
+        echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $hypertrace_ingester_version
         echo '  - name: raw-spans-grouper'
-        echo '    repository:' "$HELM_GCS_REPO"
+        echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $hypertrace_ingester_version
         echo '  - name: hypertrace-trace-enricher'
-        echo '    repository:' "$HELM_GCS_REPO"
+        echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $hypertrace_ingester_version
         echo '  - name: hypertrace-view-generator'
-        echo '    repository:' "$HELM_GCS_REPO"
+        echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $hypertrace_ingester_version
         echo '  - name: hypertrace-ui'
-        echo '    repository:' "$HELM_GCS_REPO"
+        echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $hypertrace_ui_version 
         echo '  - name: hypertrace-graphql-service'
-        echo '    repository:' "$HELM_GCS_REPO"
+        echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $hypertrace_graphql_version
         echo '  - name: attribute-service'
-        echo '    repository:' "$HELM_GCS_REPO"
+        echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $attribute_service_version
         echo '  - name: gateway-service'
-        echo '    repository:' "$HELM_GCS_REPO"
+        echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $gateway_service_version
         echo '  - name: query-service'
-        echo '    repository:' "$HELM_GCS_REPO"
+        echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $query_service_version
         echo '  - name: entity-service'
-        echo '    repository:' "$HELM_GCS_REPO"
+        echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $entity_service_version
 } 
 
