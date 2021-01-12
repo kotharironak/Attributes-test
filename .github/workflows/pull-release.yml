@@ -56,9 +56,6 @@ jobs:
           schema_registry_version: ${{ steps.schema-registry.outputs.tag }}
           mongodb_version: ${{ steps.mongodb.outputs.tag }}
           zookeeper_version: ${{ steps.zookeeper.outputs.tag }}
-
-      - name: create charts 
-        run: ./.github/workflows/commit.sh
       
       - name: Create Pull Request
         id: cpr
