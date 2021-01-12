@@ -19,6 +19,7 @@ jobs:
         uses: oprypin/find-latest-tag@v1
         with:
           repository: hypertrace/kafka
+          releases-only: true
       - uses: actions/checkout@v2
       - name: validate charts
         run: ./.github/workflows/release.sh
