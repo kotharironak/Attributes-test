@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - name: minikube stop && minikube start --cpus 2 --memory 6144
-        run: minikube start
+      - name: start minikube
+        run: minikube start -cpus 2 --memory 6144
       - name: see contextx
         run: kubectl config get-contexts 
       - name: see current context
