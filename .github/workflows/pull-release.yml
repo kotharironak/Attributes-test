@@ -57,6 +57,12 @@ jobs:
           mongodb_version: ${{ steps.mongodb.outputs.tag }}
           zookeeper_version: ${{ steps.zookeeper.outputs.tag }}
 
+      - name: create charts 
+        run: |
+          git add . 
+          git branch -m "release-charts"
+          git commit -m "Updated Repository data"
+      
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v3
