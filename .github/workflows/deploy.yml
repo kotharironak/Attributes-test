@@ -1,0 +1,13 @@
+name: deploy ht
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: install ht
+        run: ./kubernetes/hypertrace.sh install
