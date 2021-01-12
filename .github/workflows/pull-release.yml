@@ -1,0 +1,49 @@
+name: get latest data services
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    
+
+jobs:
+  get-latest-releases:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Get latest stable 
+        id: kafka
+        uses: pozetroninc/github-action-get-latest-release@master
+        with:
+          repository: hypertrace/kafka
+      - run: echo "latest stable release ${{ steps.kafka.outputs.release }}"
+
+      - name: Get latest stable 
+        id: zookeeper
+        uses: pozetroninc/github-action-get-latest-release@master
+        with:
+          repository: hypertrace/zookeeper
+      - run: echo "latest stable release ${{ steps.zookeeper.outputs.release }}"
+
+      - name: Get latest stable 
+        id: pinot
+        uses: pozetroninc/github-action-get-latest-release@master
+        with:
+          repository: hypertrace/pinot
+      - run: echo "latest stable release ${{ steps.pinot.outputs.release }}"
+
+      - name: Get latest stable 
+        id: schema-registry
+        uses: pozetroninc/github-action-get-latest-release@master
+        with:
+          repository: hypertrace/schema-registry
+      - run: echo "latest stable release ${{ steps.kafka.outputs.release }}"
+
+      - name: Get latest stable 
+        id: mongodb
+        uses: pozetroninc/github-action-get-latest-release@master
+        with:
+          repository: hypertrace/mongodb
+      - run: echo "latest stable release ${{ steps.mongodb.outputs.release }}"
+
