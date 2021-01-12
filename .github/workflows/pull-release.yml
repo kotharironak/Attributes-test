@@ -78,8 +78,8 @@ jobs:
           labels: |
             report
             automated pr
-          assignees: peter-evans
-          reviewers: peter-evans
+          assignees: JBAhire
+          reviewers: JBAhire
           team-reviewers: |
             owners
             maintainers
