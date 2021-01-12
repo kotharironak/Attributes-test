@@ -14,14 +14,12 @@ jobs:
   snyk-main:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-      with:
-        ref: ${{github.event.pull_request.head.ref}}
-        repository: ${{github.event.pull_request.head.repo.full_name}}
-    - name: Option1 for gettign branch
-      run: | 
-        BRANCH=$(echo ${GITHUB_REF} | cut -d/ -f 3)
-        echo $BRANCH
-    - name: Running script
-      run: ./.github/workflows/test.sh
+      - name: Get latest stable Octoprint
+        id: stable-octoprint
+        uses: pozetroninc/github-action-get-latest-release@master
+        with:
+          owner: Fininity-ai
+          repo: Attributes-test 
+          excludes: prerelease,draft
+      - run: echo "latest stable release ${{ steps.stable-octoprint.outputs.release }}"
 
