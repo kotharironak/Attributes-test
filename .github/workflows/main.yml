@@ -20,5 +20,7 @@ jobs:
         with:
           owner: Fininity-ai
           repo: Attributes-test 
-          excludes: prerelease,draft
-      - run: ./.github/workflows/release.sh
+          excludes: prerelease,draft 
+      - run: |
+          chmod +x .github/workflows/release.sh
+          ./.github/workflows/release.sh
