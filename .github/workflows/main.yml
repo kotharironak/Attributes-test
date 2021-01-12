@@ -21,5 +21,6 @@ jobs:
           owner: Fininity-ai
           repo: Attributes-test 
           excludes: prerelease,draft 
+      - uses: actions/checkout@v2
       - name: validate charts
         run: ./.github/workflows/release.sh
