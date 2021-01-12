@@ -21,20 +21,20 @@ version: 0.1.0
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 appVersion: 0.1.0
-\n
+ 
 dependencies:
   -   name: kafka
       repository: "https://storage.googleapis.com/hypertrace-helm-charts"
-      version: $kafka_version 
+      version: 0.1.8
+  -   name: zookeeper
+      repository: "https://storage.googleapis.com/hypertrace-helm-charts"
+      version: 0.1.2
+  -   name: pinot
+      repository: "https://storage.googleapis.com/hypertrace-helm-charts"
+      version: 0.2.7
   -   name: kafka
       repository: "https://storage.googleapis.com/hypertrace-helm-charts"
-      version: $zookeeper_version 
+      version: 0.1.5
   -   name: kafka
       repository: "https://storage.googleapis.com/hypertrace-helm-charts"
-      version: $pinot_version 
-  -   name: kafka
-      repository: "https://storage.googleapis.com/hypertrace-helm-charts"
-      version: $schema_registry_version 
-  -   name: kafka
-      repository: "https://storage.googleapis.com/hypertrace-helm-charts"
-      version: $mongodb_version 
+      version: 0.1.2
