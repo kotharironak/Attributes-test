@@ -57,3 +57,8 @@ jobs:
           schema_registry_version: ${{ steps.schema-registry.outputs.tag }}
           mongodb_version: ${{ steps.mongodb.outputs.tag }}
           zookeeper_version: ${{ steps.zookeeper.outputs.tag }}
+
+      - name: commit changes
+        run: |
+          chmod +x ./.github/workflows/commit.sh
+          ./.github/workflows/commit.sh
