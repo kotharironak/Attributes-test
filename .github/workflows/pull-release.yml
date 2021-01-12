@@ -1,11 +1,11 @@
-name: get latest data services
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+# name: get latest data services
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - main
 
 jobs:
   get-latest-releases:
