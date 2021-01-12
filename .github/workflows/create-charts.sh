@@ -19,7 +19,7 @@ print_charts() {
         echo '  - name: pinot'
         echo '    repository: "https://storage.googleapis.com/hypertrace-helm-charts"'
         echo '    version:' $pinot_version 
-        echo '  - name: kafka'
+        echo '  - name: schema-registry'
         echo '    repository: "https://storage.googleapis.com/hypertrace-helm-charts"'
         echo '    version:' $schema_registry_version
         echo '  - name: kafka'
