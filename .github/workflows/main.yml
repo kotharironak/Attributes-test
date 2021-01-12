@@ -23,4 +23,4 @@ jobs:
       - name: validate charts
         run: ./.github/workflows/release.sh
         env: 
-          kafka_version: ${{ steps.kafka.outputs.release }}
+          kafka_version: ${{ steps.kafka.outputs.tag }}
