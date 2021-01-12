@@ -1,8 +1,7 @@
 name: get latest helm charts
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '00 06 * * 5' #every friday at 11:30 AM IST/ 6 AM UST
 
 
 jobs:
@@ -130,8 +129,8 @@ jobs:
             helm-updates
             automated pr
             release
-          assignees: JBAhire
-          reviewers: JBAhire
+          assignees: JBAhire, kotharironak, rish691
+          reviewers: JBAhire, kotharironak, rish691
           team-reviewers: |
             owners
             maintainers
