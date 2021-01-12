@@ -28,7 +28,7 @@ print_charts() {
 } 
 
 main() {
-    charts_file="${OUT_DIR}/charts.yaml"
+    charts_file="${OUT_DIR}/Charts.yaml"
     mk_kubernetes_manifests > "${charts_file}"
     log "Written ${charts_file}"
 }
