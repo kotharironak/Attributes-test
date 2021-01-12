@@ -9,6 +9,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+      - name: see pods
+        run: kubectl config get-contexts 
+      - name: see pods
+        run: kubectl config current-context 
       - name: install ht
         run: ./kubernetes/hypertrace.sh install
       - name: see pods
