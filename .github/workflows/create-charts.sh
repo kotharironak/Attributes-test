@@ -1,7 +1,7 @@
 OUT_DIR="kubernetes/data-services"
 
 print_header() {
-    cat "${SCRIPTDIR}/license_header.txt"
+    cat ".github/workflows/license_header.txt"
     echo
 }
 
