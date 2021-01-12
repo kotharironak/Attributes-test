@@ -47,3 +47,11 @@ jobs:
           repository: hypertrace/mongodb
       - run: echo "latest stable release ${{ steps.mongodb.outputs.tag }}"
 
+      - name: create charts 
+        run: ./.github/workflows/create-charts.sh
+        env: 
+          kafka_version: ${{ steps.kafka.outputs.tag }}
+          pinot_version: ${{ steps.pinot.outputs.tag }}
+          schema_registry_version: ${{ steps.schema-registry.outputs.tag }}
+          mongodb_version: ${{ steps.mongodb.outputs.tag }}
+          zookeeper_version: ${{ steps.zookeeper.outputs.tag }}
