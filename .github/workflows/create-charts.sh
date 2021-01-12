@@ -1,4 +1,4 @@
-OUT_DIR="../kubernetes/data-services"
+OUT_DIR="kubernetes/data-services"
 
 print_header() {
     cat "${SCRIPTDIR}/license_header.txt"
