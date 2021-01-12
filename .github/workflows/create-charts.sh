@@ -51,7 +51,7 @@ update_platform_services_charts() {
         echo '    version:' $hypertrace_ui_version 
         echo '  - name: hypertrace-graphql-service'
         echo '    repository:' $HELM_GCS_REPO
-        echo '    version:' $hypertrace_graphql_service_version
+        echo '    version:' $hypertrace_graphql_version
         echo '  - name: attribute-service'
         echo '    repository:' $HELM_GCS_REPO
         echo '    version:' $attribute_service_version

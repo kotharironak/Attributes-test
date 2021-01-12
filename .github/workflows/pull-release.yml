@@ -58,10 +58,10 @@ jobs:
           repository: hypertrace/hypertrace-ui
 
       - name: Get latest charts for graphql
-        id: hypertrace-graphql-service
+        id: hypertrace-graphql
         uses: oprypin/find-latest-tag@v1
         with:
-          repository: hypertrace/hypertrace-graphql-service
+          repository: hypertrace/hypertrace-graphql
 
       - name: Get latest charts for attribute-service
         id: attribute-service
@@ -104,7 +104,7 @@ jobs:
           hypertrace_oc_collector_version : ${{ steps.opencensus-service.outputs.tag }}
           hypertrace_ingester_version: ${{ steps.hypertrace-ingester.outputs.tag }}
           hypertrace_ui_version: ${{ steps.hypertrace-ui.outputs.tag }}
-          hypertrace_graphql_service_version: ${{ steps.hypertrace-graphql-service.outputs.tag }}
+          hypertrace_graphql_version: ${{ steps.hypertrace-graphql.outputs.tag }}
           attribute_service_version: ${{ steps.attribute-service.outputs.tag }}
           query_service_version: ${{ steps.query-service.outputs.tag }}
           gateway_service_version: ${{ steps.gateway-service.outputs.tag }}
