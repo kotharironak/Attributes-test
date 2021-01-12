@@ -20,7 +20,6 @@ jobs:
         with:
           owner: hypertrace
           repo: kafka
-          excludes: prerelease,draft 
       - uses: actions/checkout@v2
       - name: validate charts
         run: ./.github/workflows/release.sh
