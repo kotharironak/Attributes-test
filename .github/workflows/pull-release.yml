@@ -119,7 +119,7 @@ jobs:
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
-          branch: update-helm-charts
+          branch: update-release-branch-on-<MM:DD:YY:HH>
           delete-branch: true
           title: '[chore] updates helm charts'
           body: |
