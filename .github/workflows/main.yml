@@ -21,9 +21,4 @@ jobs:
           owner: Fininity-ai
           repo: Attributes-test 
           excludes: prerelease,draft
-      - run: |
-          echo 'dependencies:'
-          echo '  -   name: kafka'
-          echo '      repository: "https://storage.googleapis.com/hypertrace-helm-charts"'
-          echo "      version: ${{ steps.stable-octoprint.outputs.release }}"
-
+      - run: ./.github/workflows/release.sh
