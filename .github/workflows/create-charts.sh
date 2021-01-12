@@ -2,7 +2,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 OUT_DIR="kubernetes/data-services"
 
 print_header() {
-    cat "${SCRIPTDIR}/license_header.txt"
+    cat "${SCRIPTDIR}/header.txt"
     echo
 }
 
