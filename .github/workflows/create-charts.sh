@@ -28,7 +28,7 @@ print_charts() {
 } 
 
 main() {
-    charts_file="${OUT_DIR}/Charts.yaml"
+    charts_file="${OUT_DIR}/Chart.yaml"
     print_charts > "${charts_file}"
 }
 
