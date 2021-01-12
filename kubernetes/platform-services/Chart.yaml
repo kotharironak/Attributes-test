@@ -24,35 +24,35 @@ appVersion: 0.1.0
 
 dependencies:
   - name: hypertrace-oc-collector
-    repository: https://storage.googleapis.com/hypertrace-helm-charts
+    repository: "https://storage.googleapis.com/hypertrace-helm-charts"
     version: 0.1.7
   - name: span-normalizer
-    repository: https://storage.googleapis.com/hypertrace-helm-charts
+    repository: "https://storage.googleapis.com/hypertrace-helm-charts"
     version: 0.4.2
   - name: raw-spans-grouper
-    repository: https://storage.googleapis.com/hypertrace-helm-charts
+    repository: "https://storage.googleapis.com/hypertrace-helm-charts"
     version: 0.4.2
   - name: hypertrace-trace-enricher
-    repository: https://storage.googleapis.com/hypertrace-helm-charts
+    repository: "https://storage.googleapis.com/hypertrace-helm-charts"
     version: 0.4.2
   - name: hypertrace-view-generator
-    repository: https://storage.googleapis.com/hypertrace-helm-charts
+    repository: "https://storage.googleapis.com/hypertrace-helm-charts"
     version: 0.4.2
   - name: hypertrace-ui
-    repository: https://storage.googleapis.com/hypertrace-helm-charts
+    repository: "https://storage.googleapis.com/hypertrace-helm-charts"
     version: 0.69.0
   - name: hypertrace-graphql-service
-    repository: https://storage.googleapis.com/hypertrace-helm-charts
+    repository: "https://storage.googleapis.com/hypertrace-helm-charts"
     version: 0.7.1
   - name: attribute-service
-    repository: https://storage.googleapis.com/hypertrace-helm-charts
+    repository: "https://storage.googleapis.com/hypertrace-helm-charts"
     version: 0.9.3
   - name: gateway-service
-    repository: https://storage.googleapis.com/hypertrace-helm-charts
+    repository: "https://storage.googleapis.com/hypertrace-helm-charts"
     version: 0.1.46
   - name: query-service
-    repository: https://storage.googleapis.com/hypertrace-helm-charts
+    repository: "https://storage.googleapis.com/hypertrace-helm-charts"
     version: 0.5.3
   - name: entity-service
-    repository: https://storage.googleapis.com/hypertrace-helm-charts
+    repository: "https://storage.googleapis.com/hypertrace-helm-charts"
     version: 0.5.4
