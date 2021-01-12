@@ -47,6 +47,8 @@ jobs:
           repository: hypertrace/mongodb
       - run: echo "latest stable release ${{ steps.mongodb.outputs.tag }}"
 
+      - uses: actions/checkout@v2
+
       - name: create charts 
         run: ./.github/workflows/create-charts.sh
         env: 
