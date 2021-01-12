@@ -25,6 +25,8 @@ print_charts() {
         echo '  -   name: kafka'
         echo '      repository: "https://storage.googleapis.com/hypertrace-helm-charts"'
         echo '      version:' $mongodb_version
+
+        echo 'hello world'
 } 
 
 main() {
