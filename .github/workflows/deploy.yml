@@ -11,3 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: install ht
         run: ./kubernetes/hypertrace.sh install
+      - name: see pods
+        run: kubectl get pods -n hypertrace
+      - name: see services
+        run: kubectl get services -n hypertrace       
