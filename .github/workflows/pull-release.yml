@@ -16,7 +16,7 @@ jobs:
         id: kafka
         uses: pozetroninc/github-action-get-latest-release@master
         with:
-          repository: hypertrace/kafka
+          repository: hypertrace/attribute-service
       - run: echo "latest stable release ${{ steps.kafka.outputs.release }}"
 
       - name: Get latest stable 

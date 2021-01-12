@@ -18,8 +18,8 @@ jobs:
         id: kafka
         uses: pozetroninc/github-action-get-latest-release@master
         with:
-          owner: Fininity-ai
-          repo: Attributes-test 
+          owner: hypertrace
+          repo: kafka
           excludes: prerelease,draft 
       - uses: actions/checkout@v2
       - name: validate charts
