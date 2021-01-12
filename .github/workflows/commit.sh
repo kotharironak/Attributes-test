@@ -5,4 +5,3 @@ git config --global user.name "JBAhire"
 git add . 
 git branch -m "release-charts"
 git commit -m "Updated Repository data"
-git push origin release-charts

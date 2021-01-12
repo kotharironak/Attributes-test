@@ -58,10 +58,7 @@ jobs:
           zookeeper_version: ${{ steps.zookeeper.outputs.tag }}
 
       - name: create charts 
-        run: |
-          git add . 
-          git branch -m "release-charts"
-          git commit -m "Updated Repository data"
+        run: ./.github/workflows/commit.sh
       
       - name: Create Pull Request
         id: cpr
