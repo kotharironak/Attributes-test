@@ -119,7 +119,7 @@ jobs:
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
-          branch: update-release-branch-on-<MM:DD:YY:HH>
+          branch: update-release-branch
           delete-branch: true
           title: '[chore] updates helm charts'
           body: |
@@ -130,8 +130,8 @@ jobs:
             helm-updates
             automated pr
             release
-          assignees: JBAhire, kotharironak, rish691
-          reviewers: JBAhire, kotharironak, rish691
+          assignees: JBAhire
+          reviewers: JBAhire
           team-reviewers: |
             owners
             maintainers
