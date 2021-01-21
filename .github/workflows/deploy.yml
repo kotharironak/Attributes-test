@@ -1,0 +1,23 @@
+name: deploy ht
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: start minikube
+        run: minikube start --cpus 2 --memory 5120
+      - name: see contextx
+        run: kubectl config get-contexts 
+      - name: see current context
+        run: kubectl config current-context 
+      - name: install ht
+        run: ./kubernetes/hypertrace.sh install
+      - name: see pods
+        run: kubectl get pods -n hypertrace
+      - name: see services
+        run: kubectl get services -n hypertrace       
