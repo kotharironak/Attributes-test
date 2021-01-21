@@ -4,18 +4,23 @@ on:
     branches:
       - main
   pull_request:
+    types: [assigned, opened, synchronize, reopened, closed]
+  release:
+    types:
+      - created
+    
 
 jobs:
   snyk-main:
     runs-on: ubuntu-latest
-    if: >
-      github.event_name == 'push' ||
-      github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name = github.repository
     steps:
-    - uses: actions/checkout@v2
-      with:
-        ref: ${{github.event.pull_request.head.ref}}
-        repository: ${{github.event.pull_request.head.repo.full_name}}
-    - name: Running script
-      run: ./.github/workflows/test.sh
-
+      - name: Get latest stable Octoprint
+        id: kafka
+        uses: oprypin/find-latest-tag@v1
+        with:
+          repository: hypertrace/kafka
+      - uses: actions/checkout@v2
+      - name: validate charts
+        run: ./.github/workflows/release.sh
+        env: 
+          kafka_version: ${{ steps.kafka.outputs.tag }}

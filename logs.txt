@@ -1,0 +1,1550 @@
+Picked up JAVA_TOOL_OPTIONS: -Xms128M -Xmx128M -XX:MaxDirectMemorySize=96M -XX:+ExitOnOutOfMemoryError
+2021-01-19 04:37:45.376 [main] INFO  o.h.c.s.PlatformServiceLauncher - Trying to start PlatformService ...
+2021-01-19 04:37:45.384 [main] WARN  o.h.c.s.c.ConfigUtils - Cannot find Property: container.name in neither JVM parameter nor OS environment
+2021-01-19 04:37:45.385 [main] INFO  o.h.c.s.c.DirectoryBasedConfigClient - Trying to compile configs under directory: /app/resources/configs
+2021-01-19 04:37:45.464 [main] INFO  o.h.c.s.c.DirectoryBasedConfigClient - Loading config from path: /app/resources/configs/common/application.conf
+2021-01-19 04:37:45.567 [main] INFO  o.h.c.s.c.DirectoryBasedConfigClient - Loading config from path: /app/resources/configs/raw-spans-grouper/staging/application.conf
+2021-01-19 04:37:45.579 [main] INFO  o.h.c.s.c.DirectoryBasedConfigClient - Overrided Configs are listed below:
+2021-01-19 04:37:45.667 [main] INFO  o.h.c.s.c.ConfigUtils - input.topic = Quoted("raw-spans-from-jaeger-spans")
+2021-01-19 04:37:45.668 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.rocksdb.cache.index.and.filter.blocks = ConfigBoolean(true)
+2021-01-19 04:37:45.668 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.value.subject.name.strategy = Quoted("io.confluent.kafka.serializers.subject.TopicRecordNameStrategy")
+2021-01-19 04:37:45.668 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.num.standby.replicas = ConfigInt(1)
+2021-01-19 04:37:45.668 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.rocksdb.max.write.buffers = ConfigInt(2)
+2021-01-19 04:37:45.668 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.topic.cleanup.policy = Quoted("delete,compact")
+2021-01-19 04:37:45.668 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.producer.linger.ms = Quoted("1000")
+2021-01-19 04:37:45.669 [main] INFO  o.h.c.s.c.ConfigUtils - output.topic = Quoted("structured-traces-from-raw-spans")
+2021-01-19 04:37:45.669 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.schema.registry.url = Quoted("http://schema-registry-service:8081")
+2021-01-19 04:37:45.669 [main] INFO  o.h.c.s.c.ConfigUtils - logger.file.dir = Quoted("/var/logs/raw-spans-grouper")
+2021-01-19 04:37:45.669 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.metrics.recording.level = Quoted("INFO")
+2021-01-19 04:37:45.669 [main] INFO  o.h.c.s.c.ConfigUtils - dataflow.metriccollection.sampling.percent = ConfigInt(10)
+2021-01-19 04:37:45.669 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.rocksdb.write.buffer.size = ConfigInt(8388608)
+2021-01-19 04:37:45.669 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.producer.max.request.size = Quoted("2097152")
+2021-01-19 04:37:45.669 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.consumer.max.partition.fetch.bytes = Quoted("8388608")
+2021-01-19 04:37:45.669 [main] INFO  o.h.c.s.c.ConfigUtils - span.groupby.session.window.interval = ConfigInt(10)
+2021-01-19 04:37:45.670 [main] INFO  o.h.c.s.c.ConfigUtils - precreate.topics = ConfigBoolean(false)
+2021-01-19 04:37:45.670 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.num.stream.threads = Quoted("4")
+2021-01-19 04:37:45.670 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.send.buffer.bytes = Quoted("4194304")
+2021-01-19 04:37:45.670 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.replication.factor = Quoted("3")
+2021-01-19 04:37:45.670 [main] INFO  o.h.c.s.c.ConfigUtils - logger.names = [Quoted("file")]
+2021-01-19 04:37:45.671 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.receive.buffer.bytes = Quoted("4194304")
+2021-01-19 04:37:45.671 [main] INFO  o.h.c.s.c.ConfigUtils - metrics.reporter.names = [Quoted("prometheus")]
+2021-01-19 04:37:45.671 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.rocksdb.config.setter = Unquoted("org.hypertrace.core.kafkastreams.framework.rocksdb.RocksDBStateStoreConfigSetter")
+2021-01-19 04:37:45.671 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.producer.buffer.memory = Quoted("134217728")
+2021-01-19 04:37:45.671 [main] INFO  o.h.c.s.c.ConfigUtils - main.class = Unquoted("org.hypertrace.core.rawspansgrouper.RawSpansGrouper")
+2021-01-19 04:37:45.671 [main] INFO  o.h.c.s.c.ConfigUtils - metrics.reporter.prefix = Unquoted("org.hypertrace.core.rawspansgrouper.RawSpansGrouper")
+2021-01-19 04:37:45.671 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.rocksdb.block.cache.size = ConfigInt(33554432)
+2021-01-19 04:37:45.671 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.commit.interval.ms = Quoted("30000")
+2021-01-19 04:37:45.672 [main] INFO  o.h.c.s.c.ConfigUtils - metrics.reporter.console.reportInterval = ConfigInt(30)
+2021-01-19 04:37:45.672 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.group.instance.id = Quoted("raw-spans-grouper-0")
+2021-01-19 04:37:45.672 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.producer.acks = Quoted("all")
+2021-01-19 04:37:45.672 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.state.dir = Quoted("/var/data/")
+2021-01-19 04:37:45.672 [main] INFO  o.h.c.s.c.ConfigUtils - service.name = Unquoted("raw-spans-grouper")
+2021-01-19 04:37:45.672 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.producer.compression.type = Quoted("gzip")
+2021-01-19 04:37:45.672 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.default.production.exception.handler = Unquoted("org.hypertrace.core.kafkastreams.framework.exceptionhandlers.IgnoreProductionExceptionHandler")
+2021-01-19 04:37:45.672 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.cache.max.bytes.buffering = Quoted("134217728")
+2021-01-19 04:37:45.672 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.producer.batch.size = Quoted("524288")
+2021-01-19 04:37:45.673 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.consumer.session.timeout.ms = Quoted("300000")
+2021-01-19 04:37:45.673 [main] INFO  o.h.c.s.c.ConfigUtils - service.admin.port = ConfigInt(8099)
+2021-01-19 04:37:45.673 [main] INFO  o.h.c.s.c.ConfigUtils - span.type = Unquoted("rawSpan")
+2021-01-19 04:37:45.673 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.ignore.production.exception.classes = Unquoted("org.apache.kafka.common.errors.RecordTooLargeException")
+2021-01-19 04:37:45.673 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.bootstrap.servers = Quoted("bootstrap:9092")
+2021-01-19 04:37:45.673 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.consumer.max.poll.records = Quoted("1000")
+2021-01-19 04:37:45.673 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.application.id = Unquoted("raw-spans-to-structured-traces-grouping-job")
+2021-01-19 04:37:45.679 [main] WARN  o.h.c.s.c.ConfigUtils - Cannot find Property: container.name in neither JVM parameter nor OS environment
+2021-01-19 04:37:45.679 [main] INFO  o.h.c.s.c.DirectoryBasedConfigClient - Trying to compile configs under directory: /app/resources/configs
+2021-01-19 04:37:45.679 [main] INFO  o.h.c.s.c.DirectoryBasedConfigClient - Loading config from path: /app/resources/configs/common/application.conf
+2021-01-19 04:37:45.766 [main] INFO  o.h.c.s.c.DirectoryBasedConfigClient - Loading config from path: /app/resources/configs/raw-spans-grouper/staging/application.conf
+2021-01-19 04:37:45.770 [main] INFO  o.h.c.s.c.DirectoryBasedConfigClient - Overrided Configs are listed below:
+2021-01-19 04:37:45.773 [main] INFO  o.h.c.s.c.ConfigUtils - input.topic = Quoted("raw-spans-from-jaeger-spans")
+2021-01-19 04:37:45.773 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.rocksdb.cache.index.and.filter.blocks = ConfigBoolean(true)
+2021-01-19 04:37:45.773 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.value.subject.name.strategy = Quoted("io.confluent.kafka.serializers.subject.TopicRecordNameStrategy")
+2021-01-19 04:37:45.773 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.num.standby.replicas = ConfigInt(1)
+2021-01-19 04:37:45.773 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.rocksdb.max.write.buffers = ConfigInt(2)
+2021-01-19 04:37:45.773 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.topic.cleanup.policy = Quoted("delete,compact")
+2021-01-19 04:37:45.773 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.producer.linger.ms = Quoted("1000")
+2021-01-19 04:37:45.774 [main] INFO  o.h.c.s.c.ConfigUtils - output.topic = Quoted("structured-traces-from-raw-spans")
+2021-01-19 04:37:45.774 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.schema.registry.url = Quoted("http://schema-registry-service:8081")
+2021-01-19 04:37:45.774 [main] INFO  o.h.c.s.c.ConfigUtils - logger.file.dir = Quoted("/var/logs/raw-spans-grouper")
+2021-01-19 04:37:45.774 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.metrics.recording.level = Quoted("INFO")
+2021-01-19 04:37:45.774 [main] INFO  o.h.c.s.c.ConfigUtils - dataflow.metriccollection.sampling.percent = ConfigInt(10)
+2021-01-19 04:37:45.774 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.rocksdb.write.buffer.size = ConfigInt(8388608)
+2021-01-19 04:37:45.774 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.producer.max.request.size = Quoted("2097152")
+2021-01-19 04:37:45.774 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.consumer.max.partition.fetch.bytes = Quoted("8388608")
+2021-01-19 04:37:45.775 [main] INFO  o.h.c.s.c.ConfigUtils - span.groupby.session.window.interval = ConfigInt(10)
+2021-01-19 04:37:45.775 [main] INFO  o.h.c.s.c.ConfigUtils - precreate.topics = ConfigBoolean(false)
+2021-01-19 04:37:45.775 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.num.stream.threads = Quoted("4")
+2021-01-19 04:37:45.775 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.send.buffer.bytes = Quoted("4194304")
+2021-01-19 04:37:45.775 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.replication.factor = Quoted("3")
+2021-01-19 04:37:45.775 [main] INFO  o.h.c.s.c.ConfigUtils - logger.names = [Quoted("file")]
+2021-01-19 04:37:45.775 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.receive.buffer.bytes = Quoted("4194304")
+2021-01-19 04:37:45.775 [main] INFO  o.h.c.s.c.ConfigUtils - metrics.reporter.names = [Quoted("prometheus")]
+2021-01-19 04:37:45.775 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.rocksdb.config.setter = Unquoted("org.hypertrace.core.kafkastreams.framework.rocksdb.RocksDBStateStoreConfigSetter")
+2021-01-19 04:37:45.776 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.producer.buffer.memory = Quoted("134217728")
+2021-01-19 04:37:45.776 [main] INFO  o.h.c.s.c.ConfigUtils - main.class = Unquoted("org.hypertrace.core.rawspansgrouper.RawSpansGrouper")
+2021-01-19 04:37:45.776 [main] INFO  o.h.c.s.c.ConfigUtils - metrics.reporter.prefix = Unquoted("org.hypertrace.core.rawspansgrouper.RawSpansGrouper")
+2021-01-19 04:37:45.776 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.rocksdb.block.cache.size = ConfigInt(33554432)
+2021-01-19 04:37:45.776 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.commit.interval.ms = Quoted("30000")
+2021-01-19 04:37:45.776 [main] INFO  o.h.c.s.c.ConfigUtils - metrics.reporter.console.reportInterval = ConfigInt(30)
+2021-01-19 04:37:45.776 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.group.instance.id = Quoted("raw-spans-grouper-0")
+2021-01-19 04:37:45.776 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.producer.acks = Quoted("all")
+2021-01-19 04:37:45.776 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.state.dir = Quoted("/var/data/")
+2021-01-19 04:37:45.777 [main] INFO  o.h.c.s.c.ConfigUtils - service.name = Unquoted("raw-spans-grouper")
+2021-01-19 04:37:45.777 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.producer.compression.type = Quoted("gzip")
+2021-01-19 04:37:45.777 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.default.production.exception.handler = Unquoted("org.hypertrace.core.kafkastreams.framework.exceptionhandlers.IgnoreProductionExceptionHandler")
+2021-01-19 04:37:45.777 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.cache.max.bytes.buffering = Quoted("134217728")
+2021-01-19 04:37:45.777 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.producer.batch.size = Quoted("524288")
+2021-01-19 04:37:45.777 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.consumer.session.timeout.ms = Quoted("300000")
+2021-01-19 04:37:45.777 [main] INFO  o.h.c.s.c.ConfigUtils - service.admin.port = ConfigInt(8099)
+2021-01-19 04:37:45.777 [main] INFO  o.h.c.s.c.ConfigUtils - span.type = Unquoted("rawSpan")
+2021-01-19 04:37:45.777 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.ignore.production.exception.classes = Unquoted("org.apache.kafka.common.errors.RecordTooLargeException")
+2021-01-19 04:37:45.778 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.bootstrap.servers = Quoted("bootstrap:9092")
+2021-01-19 04:37:45.778 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.consumer.max.poll.records = Quoted("1000")
+2021-01-19 04:37:45.778 [main] INFO  o.h.c.s.c.ConfigUtils - kafka.streams.config.application.id = Unquoted("raw-spans-to-structured-traces-grouping-job")
+2021-01-19 04:37:45.778 [main] INFO  o.h.c.s.PlatformService - Starting the service with this config Config(SimpleConfigObject({"dataflow":{"metriccollection":{"sampling":{"percent":10}}},"input":{"topic":"raw-spans-from-jaeger-spans"},"kafka":{"streams":{"config":{"application":{"id":"raw-spans-to-structured-traces-grouping-job"},"bootstrap":{"servers":"bootstrap:9092"},"cache":{"max":{"bytes":{"buffering":"134217728"}}},"commit":{"interval":{"ms":"30000"}},"consumer":{"max":{"partition":{"fetch":{"bytes":"8388608"}},"poll":{"records":"1000"}},"session":{"timeout":{"ms":"300000"}}},"default":{"production":{"exception":{"handler":"org.hypertrace.core.kafkastreams.framework.exceptionhandlers.IgnoreProductionExceptionHandler"}}},"group":{"instance":{"id":"raw-spans-grouper-0"}},"ignore":{"production":{"exception":{"classes":"org.apache.kafka.common.errors.RecordTooLargeException"}}},"metrics":{"recording":{"level":"INFO"}},"num":{"standby":{"replicas":1},"stream":{"threads":"4"}},"producer":{"acks":"all","batch":{"size":"524288"},"buffer":{"memory":"134217728"},"compression":{"type":"gzip"},"linger":{"ms":"1000"},"max":{"request":{"size":"2097152"}}},"receive":{"buffer":{"bytes":"4194304"}},"replication":{"factor":"3"},"rocksdb":{"block":{"cache":{"size":33554432}},"cache":{"index":{"and":{"filter":{"blocks":true}}}},"config":{"setter":"org.hypertrace.core.kafkastreams.framework.rocksdb.RocksDBStateStoreConfigSetter"},"max":{"write":{"buffers":2}},"write":{"buffer":{"size":8388608}}},"schema":{"registry":{"url":"http://schema-registry-service:8081"}},"send":{"buffer":{"bytes":"4194304"}},"state":{"dir":"/var/data/"},"topic":{"cleanup":{"policy":"delete,compact"}},"value":{"subject":{"name":{"strategy":"io.confluent.kafka.serializers.subject.TopicRecordNameStrategy"}}}}}},"logger":{"file":{"dir":"/var/logs/raw-spans-grouper"},"names":["file"]},"main":{"class":"org.hypertrace.core.rawspansgrouper.RawSpansGrouper"},"metrics":{"reporter":{"console":{"reportInterval":30},"names":["prometheus"],"prefix":"org.hypertrace.core.rawspansgrouper.RawSpansGrouper"}},"output":{"topic":"structured-traces-from-raw-spans"},"precreate":{"topics":false},"service":{"admin":{"port":8099},"name":"raw-spans-grouper"},"span":{"groupby":{"session":{"window":{"interval":10}}},"type":"rawSpan"}}))
+2021-01-19 04:37:45.885 [main] INFO  o.h.c.s.m.PlatformMetricsRegistry - Trying to init PrometheusReporter
+2021-01-19 04:37:45.971 [main] INFO  o.h.c.s.m.PlatformMetricsRegistry - Setting default tags for all metrics to: {app=raw-spans-grouper}
+2021-01-19 04:37:46.382 [main] INFO  o.a.k.s.StreamsConfig - StreamsConfig values: 
+	acceptable.recovery.lag = 10000
+	application.id = raw-spans-to-structured-traces-grouping-job
+	application.server = 
+	bootstrap.servers = [bootstrap:9092]
+	buffered.records.per.partition = 1000
+	built.in.metrics.version = latest
+	cache.max.bytes.buffering = 134217728
+	client.id = 
+	commit.interval.ms = 30000
+	connections.max.idle.ms = 540000
+	default.deserialization.exception.handler = class org.apache.kafka.streams.errors.LogAndContinueExceptionHandler
+	default.key.serde = class io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+	default.production.exception.handler = class org.hypertrace.core.kafkastreams.framework.exceptionhandlers.IgnoreProductionExceptionHandler
+	default.timestamp.extractor = class org.hypertrace.core.kafkastreams.framework.timestampextractors.UseWallclockTimeOnInvalidTimestamp
+	default.value.serde = class io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+	default.windowed.key.serde.inner = null
+	default.windowed.value.serde.inner = null
+	max.task.idle.ms = 0
+	max.warmup.replicas = 2
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	num.standby.replicas = 1
+	num.stream.threads = 4
+	partition.grouper = class org.apache.kafka.streams.processor.DefaultPartitionGrouper
+	poll.ms = 100
+	probing.rebalance.interval.ms = 600000
+	processing.guarantee = at_least_once
+	receive.buffer.bytes = 4194304
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	replication.factor = 3
+	request.timeout.ms = 40000
+	retries = 0
+	retry.backoff.ms = 100
+	rocksdb.config.setter = class org.hypertrace.core.kafkastreams.framework.rocksdb.RocksDBStateStoreConfigSetter
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 4194304
+	state.cleanup.delay.ms = 600000
+	state.dir = /var/data/
+	topology.optimization = all
+	upgrade.from = null
+	windowstore.changelog.additional.retention.ms = 86400000
+
+2021-01-19 04:37:46.467 [main] INFO  i.c.k.s.KafkaAvroSerializerConfig - KafkaAvroSerializerConfig values: 
+	auto.register.schemas = true
+	basic.auth.credentials.source = URL
+	basic.auth.user.info = [hidden]
+	bearer.auth.credentials.source = STATIC_TOKEN
+	bearer.auth.token = [hidden]
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	max.schemas.per.subject = 1000
+	proxy.host = 
+	proxy.port = -1
+	schema.reflection = false
+	schema.registry.basic.auth.user.info = [hidden]
+	schema.registry.ssl.cipher.suites = null
+	schema.registry.ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	schema.registry.ssl.endpoint.identification.algorithm = https
+	schema.registry.ssl.engine.factory.class = null
+	schema.registry.ssl.key.password = null
+	schema.registry.ssl.keymanager.algorithm = SunX509
+	schema.registry.ssl.keystore.location = null
+	schema.registry.ssl.keystore.password = null
+	schema.registry.ssl.keystore.type = JKS
+	schema.registry.ssl.protocol = TLSv1.3
+	schema.registry.ssl.provider = null
+	schema.registry.ssl.secure.random.implementation = null
+	schema.registry.ssl.trustmanager.algorithm = PKIX
+	schema.registry.ssl.truststore.location = null
+	schema.registry.ssl.truststore.password = null
+	schema.registry.ssl.truststore.type = JKS
+	schema.registry.url = [http://schema-registry-service:8081]
+	use.latest.version = false
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicRecordNameStrategy
+
+2021-01-19 04:37:46.986 [main] INFO  i.c.k.s.KafkaAvroDeserializerConfig - KafkaAvroDeserializerConfig values: 
+	auto.register.schemas = true
+	basic.auth.credentials.source = URL
+	basic.auth.user.info = [hidden]
+	bearer.auth.credentials.source = STATIC_TOKEN
+	bearer.auth.token = [hidden]
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	max.schemas.per.subject = 1000
+	proxy.host = 
+	proxy.port = -1
+	schema.reflection = false
+	schema.registry.basic.auth.user.info = [hidden]
+	schema.registry.ssl.cipher.suites = null
+	schema.registry.ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	schema.registry.ssl.endpoint.identification.algorithm = https
+	schema.registry.ssl.engine.factory.class = null
+	schema.registry.ssl.key.password = null
+	schema.registry.ssl.keymanager.algorithm = SunX509
+	schema.registry.ssl.keystore.location = null
+	schema.registry.ssl.keystore.password = null
+	schema.registry.ssl.keystore.type = JKS
+	schema.registry.ssl.protocol = TLSv1.3
+	schema.registry.ssl.provider = null
+	schema.registry.ssl.secure.random.implementation = null
+	schema.registry.ssl.trustmanager.algorithm = PKIX
+	schema.registry.ssl.truststore.location = null
+	schema.registry.ssl.truststore.password = null
+	schema.registry.ssl.truststore.type = JKS
+	schema.registry.url = [http://schema-registry-service:8081]
+	specific.avro.reader = true
+	use.latest.version = false
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicRecordNameStrategy
+
+2021-01-19 04:37:47.084 [main] INFO  o.h.c.r.RawSpansGrouper - Finalized kafka streams configuration: {consumer.session.timeout.ms=300000, replication.factor=3, topology.optimization=all, commit.interval.ms=30000, rocksdb.write.buffer.size=8388608, bootstrap.servers=bootstrap:9092, rocksdb.max.write.buffers=2, metrics.recording.level=INFO, default.production.exception.handler=org.hypertrace.core.kafkastreams.framework.exceptionhandlers.IgnoreProductionExceptionHandler, value.subject.name.strategy=io.confluent.kafka.serializers.subject.TopicRecordNameStrategy, producer.acks=all, schema.registry.url=http://schema-registry-service:8081, raw-spans-grouper-job-config=Config(SimpleConfigObject({"dataflow":{"metriccollection":{"sampling":{"percent":10}}},"input":{"topic":"raw-spans-from-jaeger-spans"},"kafka":{"streams":{"config":{"application":{"id":"raw-spans-to-structured-traces-grouping-job"},"bootstrap":{"servers":"bootstrap:9092"},"cache":{"max":{"bytes":{"buffering":"134217728"}}},"commit":{"interval":{"ms":"30000"}},"consumer":{"max":{"partition":{"fetch":{"bytes":"8388608"}},"poll":{"records":"1000"}},"session":{"timeout":{"ms":"300000"}}},"default":{"production":{"exception":{"handler":"org.hypertrace.core.kafkastreams.framework.exceptionhandlers.IgnoreProductionExceptionHandler"}}},"group":{"instance":{"id":"raw-spans-grouper-0"}},"ignore":{"production":{"exception":{"classes":"org.apache.kafka.common.errors.RecordTooLargeException"}}},"metrics":{"recording":{"level":"INFO"}},"num":{"standby":{"replicas":1},"stream":{"threads":"4"}},"producer":{"acks":"all","batch":{"size":"524288"},"buffer":{"memory":"134217728"},"compression":{"type":"gzip"},"linger":{"ms":"1000"},"max":{"request":{"size":"2097152"}}},"receive":{"buffer":{"bytes":"4194304"}},"replication":{"factor":"3"},"rocksdb":{"block":{"cache":{"size":33554432}},"cache":{"index":{"and":{"filter":{"blocks":true}}}},"config":{"setter":"org.hypertrace.core.kafkastreams.framework.rocksdb.RocksDBStateStoreConfigSetter"},"max":{"write":{"buffers":2}},"write":{"buffer":{"size":8388608}}},"schema":{"registry":{"url":"http://schema-registry-service:8081"}},"send":{"buffer":{"bytes":"4194304"}},"state":{"dir":"/var/data/"},"topic":{"cleanup":{"policy":"delete,compact"}},"value":{"subject":{"name":{"strategy":"io.confluent.kafka.serializers.subject.TopicRecordNameStrategy"}}}}}},"logger":{"file":{"dir":"/var/logs/raw-spans-grouper"},"names":["file"]},"main":{"class":"org.hypertrace.core.rawspansgrouper.RawSpansGrouper"},"metrics":{"reporter":{"console":{"reportInterval":30},"names":["prometheus"],"prefix":"org.hypertrace.core.rawspansgrouper.RawSpansGrouper"}},"output":{"topic":"structured-traces-from-raw-spans"},"precreate":{"topics":false},"service":{"admin":{"port":8099},"name":"raw-spans-grouper"},"span":{"groupby":{"session":{"window":{"interval":10}}},"type":"rawSpan"}})), consumer.auto.offset.reset=latest, cache.max.bytes.buffering=134217728, producer.compression.type=gzip, topic.retention.ms=43200000, num.standby.replicas=1, topic.cleanup.policy=delete,compact, group.instance.id=raw-spans-grouper-0, default.value.serde=class io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde, rocksdb.config.setter=org.hypertrace.core.kafkastreams.framework.rocksdb.RocksDBStateStoreConfigSetter, producer.max.request.size=2097152, default.deserialization.exception.handler=class org.apache.kafka.streams.errors.LogAndContinueExceptionHandler, producer.buffer.memory=134217728, rocksdb.block.cache.size=33554432, consumer.max.poll.records=1000, state.dir=/var/data/, receive.buffer.bytes=4194304, default.key.serde=class io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde, ignore.production.exception.classes=org.apache.kafka.common.errors.RecordTooLargeException, producer.linger.ms=1000, default.timestamp.extractor=class org.hypertrace.core.kafkastreams.framework.timestampextractors.UseWallclockTimeOnInvalidTimestamp, producer.batch.size=524288, send.buffer.bytes=4194304, num.stream.threads=4, rocksdb.cache.index.and.filter.blocks=true, consumer.max.partition.fetch.bytes=8388608, application.id=raw-spans-to-structured-traces-grouping-job}
+2021-01-19 04:37:47.166 [main] INFO  o.a.k.s.StreamsConfig - StreamsConfig values: 
+	acceptable.recovery.lag = 10000
+	application.id = raw-spans-to-structured-traces-grouping-job
+	application.server = 
+	bootstrap.servers = [bootstrap:9092]
+	buffered.records.per.partition = 1000
+	built.in.metrics.version = latest
+	cache.max.bytes.buffering = 134217728
+	client.id = 
+	commit.interval.ms = 30000
+	connections.max.idle.ms = 540000
+	default.deserialization.exception.handler = class org.apache.kafka.streams.errors.LogAndContinueExceptionHandler
+	default.key.serde = class io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+	default.production.exception.handler = class org.hypertrace.core.kafkastreams.framework.exceptionhandlers.IgnoreProductionExceptionHandler
+	default.timestamp.extractor = class org.hypertrace.core.kafkastreams.framework.timestampextractors.UseWallclockTimeOnInvalidTimestamp
+	default.value.serde = class io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+	default.windowed.key.serde.inner = null
+	default.windowed.value.serde.inner = null
+	max.task.idle.ms = 0
+	max.warmup.replicas = 2
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	num.standby.replicas = 1
+	num.stream.threads = 4
+	partition.grouper = class org.apache.kafka.streams.processor.DefaultPartitionGrouper
+	poll.ms = 100
+	probing.rebalance.interval.ms = 600000
+	processing.guarantee = at_least_once
+	receive.buffer.bytes = 4194304
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	replication.factor = 3
+	request.timeout.ms = 40000
+	retries = 0
+	retry.backoff.ms = 100
+	rocksdb.config.setter = class org.hypertrace.core.kafkastreams.framework.rocksdb.RocksDBStateStoreConfigSetter
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 4194304
+	state.cleanup.delay.ms = 600000
+	state.dir = /var/data/
+	topology.optimization = all
+	upgrade.from = null
+	windowstore.changelog.additional.retention.ms = 86400000
+
+2021-01-19 04:37:47.265 [main] INFO  o.a.k.s.KafkaStreams - stream-client [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f] Kafka Streams version: 6.0.1-ccs
+2021-01-19 04:37:47.266 [main] INFO  o.a.k.s.KafkaStreams - stream-client [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f] Kafka Streams commit ID: 9c1fbb3db1e0d69d
+2021-01-19 04:37:47.289 [main] INFO  o.a.k.c.a.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [bootstrap:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-admin
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 4194304
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 4194304
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2021-01-19 04:37:47.397 [main] WARN  o.a.k.c.a.AdminClientConfig - The configuration 'topic.cleanup.policy' was supplied but isn't a known config.
+2021-01-19 04:37:47.397 [main] WARN  o.a.k.c.a.AdminClientConfig - The configuration 'rocksdb.write.buffer.size' was supplied but isn't a known config.
+2021-01-19 04:37:47.397 [main] WARN  o.a.k.c.a.AdminClientConfig - The configuration 'rocksdb.block.cache.size' was supplied but isn't a known config.
+2021-01-19 04:37:47.398 [main] WARN  o.a.k.c.a.AdminClientConfig - The configuration 'rocksdb.max.write.buffers' was supplied but isn't a known config.
+2021-01-19 04:37:47.398 [main] WARN  o.a.k.c.a.AdminClientConfig - The configuration 'value.subject.name.strategy' was supplied but isn't a known config.
+2021-01-19 04:37:47.398 [main] WARN  o.a.k.c.a.AdminClientConfig - The configuration 'ignore.production.exception.classes' was supplied but isn't a known config.
+2021-01-19 04:37:47.398 [main] WARN  o.a.k.c.a.AdminClientConfig - The configuration 'schema.registry.url' was supplied but isn't a known config.
+2021-01-19 04:37:47.398 [main] WARN  o.a.k.c.a.AdminClientConfig - The configuration 'raw-spans-grouper-job-config' was supplied but isn't a known config.
+2021-01-19 04:37:47.398 [main] WARN  o.a.k.c.a.AdminClientConfig - The configuration 'topic.retention.ms' was supplied but isn't a known config.
+2021-01-19 04:37:47.398 [main] WARN  o.a.k.c.a.AdminClientConfig - The configuration 'rocksdb.cache.index.and.filter.blocks' was supplied but isn't a known config.
+2021-01-19 04:37:47.465 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka version: 6.0.1-ccs
+2021-01-19 04:37:47.465 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka commitId: 9c1fbb3db1e0d69d
+2021-01-19 04:37:47.465 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1611031067398
+2021-01-19 04:37:47.466 [main] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1] Creating restore consumer client
+2021-01-19 04:37:47.473 [main] INFO  o.a.k.c.c.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = none
+	bootstrap.servers = [bootstrap:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1-restore-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = null
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 8388608
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 4194304
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 4194304
+	session.timeout.ms = 300000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2021-01-19 04:37:47.668 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'topic.cleanup.policy' was supplied but isn't a known config.
+2021-01-19 04:37:47.669 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.write.buffer.size' was supplied but isn't a known config.
+2021-01-19 04:37:47.669 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.block.cache.size' was supplied but isn't a known config.
+2021-01-19 04:37:47.669 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.max.write.buffers' was supplied but isn't a known config.
+2021-01-19 04:37:47.669 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'value.subject.name.strategy' was supplied but isn't a known config.
+2021-01-19 04:37:47.669 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'ignore.production.exception.classes' was supplied but isn't a known config.
+2021-01-19 04:37:47.669 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'schema.registry.url' was supplied but isn't a known config.
+2021-01-19 04:37:47.669 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'raw-spans-grouper-job-config' was supplied but isn't a known config.
+2021-01-19 04:37:47.669 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'topic.retention.ms' was supplied but isn't a known config.
+2021-01-19 04:37:47.669 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.cache.index.and.filter.blocks' was supplied but isn't a known config.
+2021-01-19 04:37:47.669 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka version: 6.0.1-ccs
+2021-01-19 04:37:47.669 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka commitId: 9c1fbb3db1e0d69d
+2021-01-19 04:37:47.669 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1611031067669
+2021-01-19 04:37:47.766 [main] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1] Creating thread producer client
+2021-01-19 04:37:47.771 [main] INFO  o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	batch.size = 524288
+	bootstrap.servers = [bootstrap:9092]
+	buffer.memory = 134217728
+	client.dns.lookup = use_all_dns_ips
+	client.id = raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1-producer
+	compression.type = gzip
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	internal.auto.downgrade.txn.commit = false
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 2097152
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 4194304
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 4194304
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 10000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2021-01-19 04:37:47.872 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'rocksdb.write.buffer.size' was supplied but isn't a known config.
+2021-01-19 04:37:47.872 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'rocksdb.max.write.buffers' was supplied but isn't a known config.
+2021-01-19 04:37:47.872 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'value.subject.name.strategy' was supplied but isn't a known config.
+2021-01-19 04:37:47.872 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'schema.registry.url' was supplied but isn't a known config.
+2021-01-19 04:37:47.872 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'raw-spans-grouper-job-config' was supplied but isn't a known config.
+2021-01-19 04:37:47.872 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'topic.retention.ms' was supplied but isn't a known config.
+2021-01-19 04:37:47.872 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'topic.cleanup.policy' was supplied but isn't a known config.
+2021-01-19 04:37:47.872 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'rocksdb.block.cache.size' was supplied but isn't a known config.
+2021-01-19 04:37:47.873 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'ignore.production.exception.classes' was supplied but isn't a known config.
+2021-01-19 04:37:47.873 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'rocksdb.cache.index.and.filter.blocks' was supplied but isn't a known config.
+2021-01-19 04:37:47.873 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka version: 6.0.1-ccs
+2021-01-19 04:37:47.873 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka commitId: 9c1fbb3db1e0d69d
+2021-01-19 04:37:47.873 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1611031067873
+2021-01-19 04:37:47.968 [main] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1] Creating consumer client
+2021-01-19 04:37:47.971 [main] INFO  o.a.k.c.c.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = false
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [bootstrap:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = raw-spans-to-structured-traces-grouping-job
+	group.instance.id = raw-spans-grouper-0-1
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 8388608
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor]
+	receive.buffer.bytes = 4194304
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 4194304
+	session.timeout.ms = 300000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2021-01-19 04:37:48.068 [main] INFO  o.a.k.s.p.i.a.AssignorConfiguration - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1-consumer] Cooperative rebalancing enabled now
+2021-01-19 04:37:48.176 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.write.buffer.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.176 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.max.write.buffers' was supplied but isn't a known config.
+2021-01-19 04:37:48.176 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'value.subject.name.strategy' was supplied but isn't a known config.
+2021-01-19 04:37:48.176 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'schema.registry.url' was supplied but isn't a known config.
+2021-01-19 04:37:48.176 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'raw-spans-grouper-job-config' was supplied but isn't a known config.
+2021-01-19 04:37:48.176 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'admin.retry.backoff.ms' was supplied but isn't a known config.
+2021-01-19 04:37:48.176 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'topic.retention.ms' was supplied but isn't a known config.
+2021-01-19 04:37:48.177 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'topic.cleanup.policy' was supplied but isn't a known config.
+2021-01-19 04:37:48.177 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.block.cache.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.177 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'ignore.production.exception.classes' was supplied but isn't a known config.
+2021-01-19 04:37:48.177 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'admin.retries' was supplied but isn't a known config.
+2021-01-19 04:37:48.177 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.cache.index.and.filter.blocks' was supplied but isn't a known config.
+2021-01-19 04:37:48.177 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka version: 6.0.1-ccs
+2021-01-19 04:37:48.177 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka commitId: 9c1fbb3db1e0d69d
+2021-01-19 04:37:48.177 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1611031068177
+2021-01-19 04:37:48.268 [main] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] Creating restore consumer client
+2021-01-19 04:37:48.269 [main] INFO  o.a.k.c.c.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = none
+	bootstrap.servers = [bootstrap:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2-restore-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = null
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 8388608
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 4194304
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 4194304
+	session.timeout.ms = 300000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2021-01-19 04:37:48.364 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'topic.cleanup.policy' was supplied but isn't a known config.
+2021-01-19 04:37:48.365 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.write.buffer.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.365 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.block.cache.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.365 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.max.write.buffers' was supplied but isn't a known config.
+2021-01-19 04:37:48.365 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'value.subject.name.strategy' was supplied but isn't a known config.
+2021-01-19 04:37:48.365 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'ignore.production.exception.classes' was supplied but isn't a known config.
+2021-01-19 04:37:48.365 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'schema.registry.url' was supplied but isn't a known config.
+2021-01-19 04:37:48.365 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'raw-spans-grouper-job-config' was supplied but isn't a known config.
+2021-01-19 04:37:48.365 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'topic.retention.ms' was supplied but isn't a known config.
+2021-01-19 04:37:48.365 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.cache.index.and.filter.blocks' was supplied but isn't a known config.
+2021-01-19 04:37:48.365 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka version: 6.0.1-ccs
+2021-01-19 04:37:48.365 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka commitId: 9c1fbb3db1e0d69d
+2021-01-19 04:37:48.365 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1611031068365
+2021-01-19 04:37:48.366 [main] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] Creating thread producer client
+2021-01-19 04:37:48.367 [main] INFO  o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	batch.size = 524288
+	bootstrap.servers = [bootstrap:9092]
+	buffer.memory = 134217728
+	client.dns.lookup = use_all_dns_ips
+	client.id = raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2-producer
+	compression.type = gzip
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	internal.auto.downgrade.txn.commit = false
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 2097152
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 4194304
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 4194304
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 10000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2021-01-19 04:37:48.373 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'rocksdb.write.buffer.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.373 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'rocksdb.max.write.buffers' was supplied but isn't a known config.
+2021-01-19 04:37:48.373 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'value.subject.name.strategy' was supplied but isn't a known config.
+2021-01-19 04:37:48.374 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'schema.registry.url' was supplied but isn't a known config.
+2021-01-19 04:37:48.374 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'raw-spans-grouper-job-config' was supplied but isn't a known config.
+2021-01-19 04:37:48.374 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'topic.retention.ms' was supplied but isn't a known config.
+2021-01-19 04:37:48.374 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'topic.cleanup.policy' was supplied but isn't a known config.
+2021-01-19 04:37:48.374 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'rocksdb.block.cache.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.374 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'ignore.production.exception.classes' was supplied but isn't a known config.
+2021-01-19 04:37:48.374 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'rocksdb.cache.index.and.filter.blocks' was supplied but isn't a known config.
+2021-01-19 04:37:48.374 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka version: 6.0.1-ccs
+2021-01-19 04:37:48.374 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka commitId: 9c1fbb3db1e0d69d
+2021-01-19 04:37:48.374 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1611031068374
+2021-01-19 04:37:48.375 [main] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] Creating consumer client
+2021-01-19 04:37:48.376 [main] INFO  o.a.k.c.c.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = false
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [bootstrap:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = raw-spans-to-structured-traces-grouping-job
+	group.instance.id = raw-spans-grouper-0-2
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 8388608
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor]
+	receive.buffer.bytes = 4194304
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 4194304
+	session.timeout.ms = 300000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2021-01-19 04:37:48.465 [main] INFO  o.a.k.s.p.i.a.AssignorConfiguration - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2-consumer] Cooperative rebalancing enabled now
+2021-01-19 04:37:48.468 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.write.buffer.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.468 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.max.write.buffers' was supplied but isn't a known config.
+2021-01-19 04:37:48.468 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'value.subject.name.strategy' was supplied but isn't a known config.
+2021-01-19 04:37:48.468 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'schema.registry.url' was supplied but isn't a known config.
+2021-01-19 04:37:48.468 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'raw-spans-grouper-job-config' was supplied but isn't a known config.
+2021-01-19 04:37:48.468 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'admin.retry.backoff.ms' was supplied but isn't a known config.
+2021-01-19 04:37:48.468 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'topic.retention.ms' was supplied but isn't a known config.
+2021-01-19 04:37:48.468 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'topic.cleanup.policy' was supplied but isn't a known config.
+2021-01-19 04:37:48.469 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.block.cache.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.469 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'ignore.production.exception.classes' was supplied but isn't a known config.
+2021-01-19 04:37:48.469 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'admin.retries' was supplied but isn't a known config.
+2021-01-19 04:37:48.469 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.cache.index.and.filter.blocks' was supplied but isn't a known config.
+2021-01-19 04:37:48.469 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka version: 6.0.1-ccs
+2021-01-19 04:37:48.469 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka commitId: 9c1fbb3db1e0d69d
+2021-01-19 04:37:48.469 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1611031068469
+2021-01-19 04:37:48.471 [main] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3] Creating restore consumer client
+2021-01-19 04:37:48.472 [main] INFO  o.a.k.c.c.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = none
+	bootstrap.servers = [bootstrap:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3-restore-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = null
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 8388608
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 4194304
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 4194304
+	session.timeout.ms = 300000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2021-01-19 04:37:48.475 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'topic.cleanup.policy' was supplied but isn't a known config.
+2021-01-19 04:37:48.475 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.write.buffer.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.476 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.block.cache.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.476 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.max.write.buffers' was supplied but isn't a known config.
+2021-01-19 04:37:48.476 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'value.subject.name.strategy' was supplied but isn't a known config.
+2021-01-19 04:37:48.476 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'ignore.production.exception.classes' was supplied but isn't a known config.
+2021-01-19 04:37:48.476 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'schema.registry.url' was supplied but isn't a known config.
+2021-01-19 04:37:48.476 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'raw-spans-grouper-job-config' was supplied but isn't a known config.
+2021-01-19 04:37:48.476 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'topic.retention.ms' was supplied but isn't a known config.
+2021-01-19 04:37:48.476 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.cache.index.and.filter.blocks' was supplied but isn't a known config.
+2021-01-19 04:37:48.476 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka version: 6.0.1-ccs
+2021-01-19 04:37:48.476 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka commitId: 9c1fbb3db1e0d69d
+2021-01-19 04:37:48.476 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1611031068476
+2021-01-19 04:37:48.477 [main] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3] Creating thread producer client
+2021-01-19 04:37:48.477 [main] INFO  o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	batch.size = 524288
+	bootstrap.servers = [bootstrap:9092]
+	buffer.memory = 134217728
+	client.dns.lookup = use_all_dns_ips
+	client.id = raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3-producer
+	compression.type = gzip
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	internal.auto.downgrade.txn.commit = false
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 2097152
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 4194304
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 4194304
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 10000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2021-01-19 04:37:48.573 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'rocksdb.write.buffer.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.573 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'rocksdb.max.write.buffers' was supplied but isn't a known config.
+2021-01-19 04:37:48.573 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'value.subject.name.strategy' was supplied but isn't a known config.
+2021-01-19 04:37:48.573 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'schema.registry.url' was supplied but isn't a known config.
+2021-01-19 04:37:48.574 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'raw-spans-grouper-job-config' was supplied but isn't a known config.
+2021-01-19 04:37:48.574 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'topic.retention.ms' was supplied but isn't a known config.
+2021-01-19 04:37:48.574 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'topic.cleanup.policy' was supplied but isn't a known config.
+2021-01-19 04:37:48.574 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'rocksdb.block.cache.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.574 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'ignore.production.exception.classes' was supplied but isn't a known config.
+2021-01-19 04:37:48.574 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'rocksdb.cache.index.and.filter.blocks' was supplied but isn't a known config.
+2021-01-19 04:37:48.574 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka version: 6.0.1-ccs
+2021-01-19 04:37:48.574 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka commitId: 9c1fbb3db1e0d69d
+2021-01-19 04:37:48.574 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1611031068574
+2021-01-19 04:37:48.575 [main] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3] Creating consumer client
+2021-01-19 04:37:48.575 [main] INFO  o.a.k.c.c.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = false
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [bootstrap:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = raw-spans-to-structured-traces-grouping-job
+	group.instance.id = raw-spans-grouper-0-3
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 8388608
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor]
+	receive.buffer.bytes = 4194304
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 4194304
+	session.timeout.ms = 300000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2021-01-19 04:37:48.666 [main] INFO  o.a.k.s.p.i.a.AssignorConfiguration - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3-consumer] Cooperative rebalancing enabled now
+2021-01-19 04:37:48.667 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.write.buffer.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.667 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.max.write.buffers' was supplied but isn't a known config.
+2021-01-19 04:37:48.667 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'value.subject.name.strategy' was supplied but isn't a known config.
+2021-01-19 04:37:48.667 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'schema.registry.url' was supplied but isn't a known config.
+2021-01-19 04:37:48.667 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'raw-spans-grouper-job-config' was supplied but isn't a known config.
+2021-01-19 04:37:48.667 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'admin.retry.backoff.ms' was supplied but isn't a known config.
+2021-01-19 04:37:48.667 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'topic.retention.ms' was supplied but isn't a known config.
+2021-01-19 04:37:48.667 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'topic.cleanup.policy' was supplied but isn't a known config.
+2021-01-19 04:37:48.668 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.block.cache.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.668 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'ignore.production.exception.classes' was supplied but isn't a known config.
+2021-01-19 04:37:48.668 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'admin.retries' was supplied but isn't a known config.
+2021-01-19 04:37:48.668 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.cache.index.and.filter.blocks' was supplied but isn't a known config.
+2021-01-19 04:37:48.668 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka version: 6.0.1-ccs
+2021-01-19 04:37:48.668 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka commitId: 9c1fbb3db1e0d69d
+2021-01-19 04:37:48.668 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1611031068668
+2021-01-19 04:37:48.669 [main] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4] Creating restore consumer client
+2021-01-19 04:37:48.669 [main] INFO  o.a.k.c.c.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = none
+	bootstrap.servers = [bootstrap:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4-restore-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = null
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 8388608
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 4194304
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 4194304
+	session.timeout.ms = 300000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2021-01-19 04:37:48.671 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'topic.cleanup.policy' was supplied but isn't a known config.
+2021-01-19 04:37:48.672 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.write.buffer.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.672 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.block.cache.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.672 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.max.write.buffers' was supplied but isn't a known config.
+2021-01-19 04:37:48.672 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'value.subject.name.strategy' was supplied but isn't a known config.
+2021-01-19 04:37:48.672 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'ignore.production.exception.classes' was supplied but isn't a known config.
+2021-01-19 04:37:48.672 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'schema.registry.url' was supplied but isn't a known config.
+2021-01-19 04:37:48.672 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'raw-spans-grouper-job-config' was supplied but isn't a known config.
+2021-01-19 04:37:48.672 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'topic.retention.ms' was supplied but isn't a known config.
+2021-01-19 04:37:48.672 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.cache.index.and.filter.blocks' was supplied but isn't a known config.
+2021-01-19 04:37:48.672 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka version: 6.0.1-ccs
+2021-01-19 04:37:48.672 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka commitId: 9c1fbb3db1e0d69d
+2021-01-19 04:37:48.672 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1611031068672
+2021-01-19 04:37:48.673 [main] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4] Creating thread producer client
+2021-01-19 04:37:48.673 [main] INFO  o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	batch.size = 524288
+	bootstrap.servers = [bootstrap:9092]
+	buffer.memory = 134217728
+	client.dns.lookup = use_all_dns_ips
+	client.id = raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4-producer
+	compression.type = gzip
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	internal.auto.downgrade.txn.commit = false
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 1000
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 2097152
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 4194304
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 4194304
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 10000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2021-01-19 04:37:48.764 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'rocksdb.write.buffer.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.764 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'rocksdb.max.write.buffers' was supplied but isn't a known config.
+2021-01-19 04:37:48.764 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'value.subject.name.strategy' was supplied but isn't a known config.
+2021-01-19 04:37:48.765 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'schema.registry.url' was supplied but isn't a known config.
+2021-01-19 04:37:48.765 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'raw-spans-grouper-job-config' was supplied but isn't a known config.
+2021-01-19 04:37:48.765 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'topic.retention.ms' was supplied but isn't a known config.
+2021-01-19 04:37:48.766 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'topic.cleanup.policy' was supplied but isn't a known config.
+2021-01-19 04:37:48.766 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'rocksdb.block.cache.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.766 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'ignore.production.exception.classes' was supplied but isn't a known config.
+2021-01-19 04:37:48.766 [main] WARN  o.a.k.c.p.ProducerConfig - The configuration 'rocksdb.cache.index.and.filter.blocks' was supplied but isn't a known config.
+2021-01-19 04:37:48.766 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka version: 6.0.1-ccs
+2021-01-19 04:37:48.766 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka commitId: 9c1fbb3db1e0d69d
+2021-01-19 04:37:48.766 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1611031068766
+2021-01-19 04:37:48.766 [main] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4] Creating consumer client
+2021-01-19 04:37:48.767 [main] INFO  o.a.k.c.c.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = false
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [bootstrap:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = raw-spans-to-structured-traces-grouping-job
+	group.instance.id = raw-spans-grouper-0-4
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 8388608
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor]
+	receive.buffer.bytes = 4194304
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 4194304
+	session.timeout.ms = 300000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2021-01-19 04:37:48.770 [main] INFO  o.a.k.s.p.i.a.AssignorConfiguration - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4-consumer] Cooperative rebalancing enabled now
+2021-01-19 04:37:48.864 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.write.buffer.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.865 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.max.write.buffers' was supplied but isn't a known config.
+2021-01-19 04:37:48.865 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'value.subject.name.strategy' was supplied but isn't a known config.
+2021-01-19 04:37:48.865 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'schema.registry.url' was supplied but isn't a known config.
+2021-01-19 04:37:48.865 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'raw-spans-grouper-job-config' was supplied but isn't a known config.
+2021-01-19 04:37:48.865 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'admin.retry.backoff.ms' was supplied but isn't a known config.
+2021-01-19 04:37:48.865 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'topic.retention.ms' was supplied but isn't a known config.
+2021-01-19 04:37:48.865 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'topic.cleanup.policy' was supplied but isn't a known config.
+2021-01-19 04:37:48.865 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.block.cache.size' was supplied but isn't a known config.
+2021-01-19 04:37:48.865 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'ignore.production.exception.classes' was supplied but isn't a known config.
+2021-01-19 04:37:48.865 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'admin.retries' was supplied but isn't a known config.
+2021-01-19 04:37:48.865 [main] WARN  o.a.k.c.c.ConsumerConfig - The configuration 'rocksdb.cache.index.and.filter.blocks' was supplied but isn't a known config.
+2021-01-19 04:37:48.865 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka version: 6.0.1-ccs
+2021-01-19 04:37:48.865 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka commitId: 9c1fbb3db1e0d69d
+2021-01-19 04:37:48.865 [main] INFO  o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1611031068865
+2021-01-19 04:37:49.273 [main] WARN  o.a.k.s.KafkaStreams - stream-client [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f] RocksDB's version will be bumped to version 6+ via KAFKA-8897 in a future release. If you use `org.rocksdb.CompactionOptionsFIFO#setTtl(long)` or `#ttl()` you will need to rewrite your code after KAFKA-8897 is resolved and set TTL via `org.rocksdb.Options` (or `org.rocksdb.ColumnFamilyOptions`).
+2021-01-19 04:37:49.472 [kafka-producer-network-thread | raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4-producer] INFO  o.a.k.c.Metadata - [Producer clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4-producer] Cluster ID: 2URrQA97TjijIR4C5L3a2A
+2021-01-19 04:37:49.473 [kafka-producer-network-thread | raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2-producer] INFO  o.a.k.c.Metadata - [Producer clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2-producer] Cluster ID: 2URrQA97TjijIR4C5L3a2A
+2021-01-19 04:37:49.473 [kafka-producer-network-thread | raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3-producer] INFO  o.a.k.c.Metadata - [Producer clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3-producer] Cluster ID: 2URrQA97TjijIR4C5L3a2A
+2021-01-19 04:37:49.472 [kafka-producer-network-thread | raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1-producer] INFO  o.a.k.c.Metadata - [Producer clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1-producer] Cluster ID: 2URrQA97TjijIR4C5L3a2A
+2021-01-19 04:37:50.371 [main] INFO  o.h.c.s.PlatformService - Service - raw-spans-grouper is initialized.
+2021-01-19 04:37:50.371 [main] INFO  o.h.c.s.PlatformService - Trying to start service - raw-spans-grouper...
+2021-01-19 04:37:50.380 [main] INFO  o.e.j.u.log - Logging initialized @7591ms to org.eclipse.jetty.util.log.Slf4jLog
+2021-01-19 04:37:50.671 [Thread-2] INFO  o.a.k.s.KafkaStreams - stream-client [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f] State transition from CREATED to REBALANCING
+2021-01-19 04:37:50.671 [Thread-2] INFO  o.h.c.k.f.l.LoggingStateListener - Transitioning from [CREATED] => [REBALANCING]
+2021-01-19 04:37:50.671 [Thread-2] INFO  o.h.c.k.f.l.LoggingStateListener - Application is entering [REBALANCING] phase
+2021-01-19 04:37:50.672 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1] Starting
+2021-01-19 04:37:50.672 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1] State transition from CREATED to STARTING
+2021-01-19 04:37:50.672 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4] Starting
+2021-01-19 04:37:50.672 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4] State transition from CREATED to STARTING
+2021-01-19 04:37:50.672 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] Starting
+2021-01-19 04:37:50.672 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3] Starting
+2021-01-19 04:37:50.672 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] State transition from CREATED to STARTING
+2021-01-19 04:37:50.672 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3] State transition from CREATED to STARTING
+2021-01-19 04:37:50.674 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] INFO  o.a.k.c.c.KafkaConsumer - [Consumer instanceId=raw-spans-grouper-0-2, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2-consumer, groupId=raw-spans-to-structured-traces-grouping-job] Subscribed to topic(s): raw-spans-from-jaeger-spans
+2021-01-19 04:37:50.674 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1] INFO  o.a.k.c.c.KafkaConsumer - [Consumer instanceId=raw-spans-grouper-0-1, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1-consumer, groupId=raw-spans-to-structured-traces-grouping-job] Subscribed to topic(s): raw-spans-from-jaeger-spans
+2021-01-19 04:37:50.674 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3] INFO  o.a.k.c.c.KafkaConsumer - [Consumer instanceId=raw-spans-grouper-0-3, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3-consumer, groupId=raw-spans-to-structured-traces-grouping-job] Subscribed to topic(s): raw-spans-from-jaeger-spans
+2021-01-19 04:37:50.674 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4] INFO  o.a.k.c.c.KafkaConsumer - [Consumer instanceId=raw-spans-grouper-0-4, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4-consumer, groupId=raw-spans-to-structured-traces-grouping-job] Subscribed to topic(s): raw-spans-from-jaeger-spans
+2021-01-19 04:37:50.676 [main] INFO  o.e.j.s.Server - jetty-9.4.35.v20201120; built: 2020-11-20T21:17:03.964Z; git: bdc54f03a5e0a7e280fab27f55c3c75ee8da89fb; jvm 11.0.8+10-LTS
+2021-01-19 04:37:50.767 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3] INFO  o.a.k.c.Metadata - [Consumer instanceId=raw-spans-grouper-0-3, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3-consumer, groupId=raw-spans-to-structured-traces-grouping-job] Cluster ID: 2URrQA97TjijIR4C5L3a2A
+2021-01-19 04:37:50.767 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] INFO  o.a.k.c.Metadata - [Consumer instanceId=raw-spans-grouper-0-2, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2-consumer, groupId=raw-spans-to-structured-traces-grouping-job] Cluster ID: 2URrQA97TjijIR4C5L3a2A
+2021-01-19 04:37:50.767 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1] INFO  o.a.k.c.Metadata - [Consumer instanceId=raw-spans-grouper-0-1, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1-consumer, groupId=raw-spans-to-structured-traces-grouping-job] Cluster ID: 2URrQA97TjijIR4C5L3a2A
+2021-01-19 04:37:50.767 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3] INFO  o.a.k.c.c.i.AbstractCoordinator - [Consumer instanceId=raw-spans-grouper-0-3, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3-consumer, groupId=raw-spans-to-structured-traces-grouping-job] Discovered group coordinator kafka-0.kafka-broker.hypertrace.svc.cluster.local:9092 (id: 2147483647 rack: null)
+2021-01-19 04:37:50.767 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] INFO  o.a.k.c.c.i.AbstractCoordinator - [Consumer instanceId=raw-spans-grouper-0-2, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2-consumer, groupId=raw-spans-to-structured-traces-grouping-job] Discovered group coordinator kafka-0.kafka-broker.hypertrace.svc.cluster.local:9092 (id: 2147483647 rack: null)
+2021-01-19 04:37:50.767 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1] INFO  o.a.k.c.c.i.AbstractCoordinator - [Consumer instanceId=raw-spans-grouper-0-1, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1-consumer, groupId=raw-spans-to-structured-traces-grouping-job] Discovered group coordinator kafka-0.kafka-broker.hypertrace.svc.cluster.local:9092 (id: 2147483647 rack: null)
+2021-01-19 04:37:50.768 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4] INFO  o.a.k.c.Metadata - [Consumer instanceId=raw-spans-grouper-0-4, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4-consumer, groupId=raw-spans-to-structured-traces-grouping-job] Cluster ID: 2URrQA97TjijIR4C5L3a2A
+2021-01-19 04:37:50.769 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4] INFO  o.a.k.c.c.i.AbstractCoordinator - [Consumer instanceId=raw-spans-grouper-0-4, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4-consumer, groupId=raw-spans-to-structured-traces-grouping-job] Discovered group coordinator kafka-0.kafka-broker.hypertrace.svc.cluster.local:9092 (id: 2147483647 rack: null)
+2021-01-19 04:37:50.770 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3] INFO  o.a.k.c.c.i.AbstractCoordinator - [Consumer instanceId=raw-spans-grouper-0-3, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3-consumer, groupId=raw-spans-to-structured-traces-grouping-job] (Re-)joining group
+2021-01-19 04:37:50.772 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1] INFO  o.a.k.c.c.i.AbstractCoordinator - [Consumer instanceId=raw-spans-grouper-0-1, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1-consumer, groupId=raw-spans-to-structured-traces-grouping-job] (Re-)joining group
+2021-01-19 04:37:50.772 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] INFO  o.a.k.c.c.i.AbstractCoordinator - [Consumer instanceId=raw-spans-grouper-0-2, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2-consumer, groupId=raw-spans-to-structured-traces-grouping-job] (Re-)joining group
+2021-01-19 04:37:50.772 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4] INFO  o.a.k.c.c.i.AbstractCoordinator - [Consumer instanceId=raw-spans-grouper-0-4, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4-consumer, groupId=raw-spans-to-structured-traces-grouping-job] (Re-)joining group
+2021-01-19 04:37:50.969 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] INFO  o.a.k.c.c.i.AbstractCoordinator - [Consumer instanceId=raw-spans-grouper-0-2, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2-consumer, groupId=raw-spans-to-structured-traces-grouping-job] Successfully joined group with generation Generation{generationId=617, memberId='raw-spans-grouper-0-2-063e6c24-a2fd-47fe-a45a-5494f40e7b4a', protocol='stream'}
+2021-01-19 04:37:50.970 [main] INFO  o.e.j.s.h.ContextHandler - Started o.e.j.s.ServletContextHandler@71dfcf21{/,null,AVAILABLE}
+2021-01-19 04:37:51.068 [main] INFO  o.e.j.s.AbstractConnector - Started ServerConnector@7b3315a5{HTTP/1.1, (http/1.1)}{0.0.0.0:8099}
+2021-01-19 04:37:51.068 [main] INFO  o.e.j.s.Server - Started @8279ms
+2021-01-19 04:37:51.068 [main] INFO  o.h.c.s.PlatformService - Started admin service on port: 8099.
+2021-01-19 04:37:51.068 [main] INFO  o.h.c.s.PlatformService - Service - raw-spans-grouper is started.
+2021-01-19 04:37:51.164 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] ERROR o.a.k.s.p.i.InternalTopicManager - stream-thread [main] Unexpected error during topic creation for raw-spans-to-structured-traces-grouping-job-trace-emit-trigger-store-changelog.
+Error message was: org.apache.kafka.common.errors.InvalidReplicationFactorException: Replication factor: 3 larger than available brokers: 1.
+2021-01-19 04:37:51.165 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] INFO  o.a.k.c.c.i.AbstractCoordinator - [Consumer instanceId=raw-spans-grouper-0-2, clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2-consumer, groupId=raw-spans-to-structured-traces-grouping-job] Rebalance failed.
+org.apache.kafka.streams.errors.StreamsException: Could not create topic raw-spans-to-structured-traces-grouping-job-trace-emit-trigger-store-changelog.
+	at org.apache.kafka.streams.processor.internals.InternalTopicManager.makeReady(InternalTopicManager.java:148) ~[kafka-streams-6.0.1-ccs.jar:?]
+	at org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor.prepareChangelogTopics(StreamsPartitionAssignor.java:691) ~[kafka-streams-6.0.1-ccs.jar:?]
+	at org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor.assignTasksToClients(StreamsPartitionAssignor.java:717) ~[kafka-streams-6.0.1-ccs.jar:?]
+	at org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor.assign(StreamsPartitionAssignor.java:382) ~[kafka-streams-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.performAssignment(ConsumerCoordinator.java:589) [kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.onJoinLeader(AbstractCoordinator.java:680) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.access$1100(AbstractCoordinator.java:111) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$JoinGroupResponseHandler.handle(AbstractCoordinator.java:593) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$JoinGroupResponseHandler.handle(AbstractCoordinator.java:556) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$CoordinatorResponseHandler.onSuccess(AbstractCoordinator.java:1145) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$CoordinatorResponseHandler.onSuccess(AbstractCoordinator.java:1120) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.RequestFuture$1.onSuccess(RequestFuture.java:206) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.RequestFuture.fireSuccess(RequestFuture.java:169) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.RequestFuture.complete(RequestFuture.java:129) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient$RequestFutureCompletionHandler.fireCompletion(ConsumerNetworkClient.java:602) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.firePendingCompletedRequests(ConsumerNetworkClient.java:412) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:297) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:236) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.KafkaConsumer.pollForFetches(KafkaConsumer.java:1296) [kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1237) [kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1210) [kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.streams.processor.internals.StreamThread.pollRequests(StreamThread.java:766) [kafka-streams-6.0.1-ccs.jar:?]
+	at org.apache.kafka.streams.processor.internals.StreamThread.runOnce(StreamThread.java:624) [kafka-streams-6.0.1-ccs.jar:?]
+	at org.apache.kafka.streams.processor.internals.StreamThread.runLoop(StreamThread.java:551) [kafka-streams-6.0.1-ccs.jar:?]
+	at org.apache.kafka.streams.processor.internals.StreamThread.run(StreamThread.java:510) [kafka-streams-6.0.1-ccs.jar:?]
+Caused by: org.apache.kafka.common.errors.InvalidReplicationFactorException: Replication factor: 3 larger than available brokers: 1.
+2021-01-19 04:37:51.172 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] ERROR o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] Encountered the following exception during processing and the thread is going to shut down: 
+org.apache.kafka.streams.errors.StreamsException: Could not create topic raw-spans-to-structured-traces-grouping-job-trace-emit-trigger-store-changelog.
+	at org.apache.kafka.streams.processor.internals.InternalTopicManager.makeReady(InternalTopicManager.java:148) ~[kafka-streams-6.0.1-ccs.jar:?]
+	at org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor.prepareChangelogTopics(StreamsPartitionAssignor.java:691) ~[kafka-streams-6.0.1-ccs.jar:?]
+	at org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor.assignTasksToClients(StreamsPartitionAssignor.java:717) ~[kafka-streams-6.0.1-ccs.jar:?]
+	at org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor.assign(StreamsPartitionAssignor.java:382) ~[kafka-streams-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.performAssignment(ConsumerCoordinator.java:589) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.onJoinLeader(AbstractCoordinator.java:680) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.access$1100(AbstractCoordinator.java:111) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$JoinGroupResponseHandler.handle(AbstractCoordinator.java:593) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$JoinGroupResponseHandler.handle(AbstractCoordinator.java:556) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$CoordinatorResponseHandler.onSuccess(AbstractCoordinator.java:1145) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$CoordinatorResponseHandler.onSuccess(AbstractCoordinator.java:1120) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.RequestFuture$1.onSuccess(RequestFuture.java:206) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.RequestFuture.fireSuccess(RequestFuture.java:169) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.RequestFuture.complete(RequestFuture.java:129) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient$RequestFutureCompletionHandler.fireCompletion(ConsumerNetworkClient.java:602) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.firePendingCompletedRequests(ConsumerNetworkClient.java:412) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:297) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:236) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.KafkaConsumer.pollForFetches(KafkaConsumer.java:1296) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1237) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1210) ~[kafka-clients-6.0.1-ccs.jar:?]
+	at org.apache.kafka.streams.processor.internals.StreamThread.pollRequests(StreamThread.java:766) ~[kafka-streams-6.0.1-ccs.jar:?]
+	at org.apache.kafka.streams.processor.internals.StreamThread.runOnce(StreamThread.java:624) ~[kafka-streams-6.0.1-ccs.jar:?]
+	at org.apache.kafka.streams.processor.internals.StreamThread.runLoop(StreamThread.java:551) ~[kafka-streams-6.0.1-ccs.jar:?]
+	at org.apache.kafka.streams.processor.internals.StreamThread.run(StreamThread.java:510) [kafka-streams-6.0.1-ccs.jar:?]
+Caused by: org.apache.kafka.common.errors.InvalidReplicationFactorException: Replication factor: 3 larger than available brokers: 1.
+2021-01-19 04:37:51.173 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] State transition from STARTING to PENDING_SHUTDOWN
+2021-01-19 04:37:51.173 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] Shutting down
+2021-01-19 04:37:51.175 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] INFO  o.a.k.c.p.KafkaProducer - [Producer clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2-producer] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2021-01-19 04:37:51.177 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] INFO  o.a.k.c.c.KafkaConsumer - [Consumer clientId=raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+2021-01-19 04:37:51.180 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] State transition from PENDING_SHUTDOWN to DEAD
+2021-01-19 04:37:51.181 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] Shutdown complete
+2021-01-19 04:37:51.182 [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] ERROR o.h.c.r.RawSpansGrouper - Thread=[raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] encountered=[org.apache.kafka.streams.errors.StreamsException: Could not create topic raw-spans-to-structured-traces-grouping-job-trace-emit-trigger-store-changelog.
+	at org.apache.kafka.streams.processor.internals.InternalTopicManager.makeReady(InternalTopicManager.java:148)
+	at org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor.prepareChangelogTopics(StreamsPartitionAssignor.java:691)
+	at org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor.assignTasksToClients(StreamsPartitionAssignor.java:717)
+	at org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor.assign(StreamsPartitionAssignor.java:382)
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.performAssignment(ConsumerCoordinator.java:589)
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.onJoinLeader(AbstractCoordinator.java:680)
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.access$1100(AbstractCoordinator.java:111)
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$JoinGroupResponseHandler.handle(AbstractCoordinator.java:593)
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$JoinGroupResponseHandler.handle(AbstractCoordinator.java:556)
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$CoordinatorResponseHandler.onSuccess(AbstractCoordinator.java:1145)
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$CoordinatorResponseHandler.onSuccess(AbstractCoordinator.java:1120)
+	at org.apache.kafka.clients.consumer.internals.RequestFuture$1.onSuccess(RequestFuture.java:206)
+	at org.apache.kafka.clients.consumer.internals.RequestFuture.fireSuccess(RequestFuture.java:169)
+	at org.apache.kafka.clients.consumer.internals.RequestFuture.complete(RequestFuture.java:129)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient$RequestFutureCompletionHandler.fireCompletion(ConsumerNetworkClient.java:602)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.firePendingCompletedRequests(ConsumerNetworkClient.java:412)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:297)
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:236)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.pollForFetches(KafkaConsumer.java:1296)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1237)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1210)
+	at org.apache.kafka.streams.processor.internals.StreamThread.pollRequests(StreamThread.java:766)
+	at org.apache.kafka.streams.processor.internals.StreamThread.runOnce(StreamThread.java:624)
+	at org.apache.kafka.streams.processor.internals.StreamThread.runLoop(StreamThread.java:551)
+	at org.apache.kafka.streams.processor.internals.StreamThread.run(StreamThread.java:510)
+Caused by: org.apache.kafka.common.errors.InvalidReplicationFactorException: Replication factor: 3 larger than available brokers: 1.
+]. Will exit.
+2021-01-19 04:37:51.267 [JettyShutdownThread] INFO  o.e.j.s.AbstractConnector - Stopped ServerConnector@7b3315a5{HTTP/1.1, (http/1.1)}{0.0.0.0:8099}
+2021-01-19 04:37:51.269 [JettyShutdownThread] INFO  o.e.j.s.h.ContextHandler - Stopped o.e.j.s.ServletContextHandler@71dfcf21{/,null,STOPPED}
+2021-01-19 04:37:51.270 [Thread-1] INFO  o.h.c.s.PlatformService - Trying to shutdown service - raw-spans-grouper...
+2021-01-19 04:37:51.271 [Thread-1] INFO  o.a.k.s.KafkaStreams - stream-client [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f] State transition from REBALANCING to PENDING_SHUTDOWN
+2021-01-19 04:37:51.271 [Thread-1] INFO  o.h.c.k.f.l.LoggingStateListener - Transitioning from [REBALANCING] => [PENDING_SHUTDOWN]
+2021-01-19 04:37:51.272 [kafka-streams-close-thread] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1] Informed to shut down
+2021-01-19 04:37:51.272 [kafka-streams-close-thread] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-1] State transition from STARTING to PENDING_SHUTDOWN
+2021-01-19 04:37:51.272 [kafka-streams-close-thread] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-2] Informed to shut down
+2021-01-19 04:37:51.272 [kafka-streams-close-thread] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3] Informed to shut down
+2021-01-19 04:37:51.272 [kafka-streams-close-thread] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-3] State transition from STARTING to PENDING_SHUTDOWN
+2021-01-19 04:37:51.272 [kafka-streams-close-thread] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4] Informed to shut down
+2021-01-19 04:37:51.272 [kafka-streams-close-thread] INFO  o.a.k.s.p.i.StreamThread - stream-thread [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f-StreamThread-4] State transition from STARTING to PENDING_SHUTDOWN
+2021-01-19 04:38:21.272 [Thread-1] INFO  o.a.k.s.KafkaStreams - stream-client [raw-spans-to-structured-traces-grouping-job-52840915-b878-4fb1-96c6-1dd31c49fa0f] Streams client cannot stop completely within the timeout
+2021-01-19 04:38:21.273 [Thread-1] INFO  o.h.c.s.PlatformService - Stopping metrics registry
+2021-01-19 04:38:21.472 [Thread-1] INFO  o.h.c.s.PlatformService - Service - raw-spans-grouper is shutdown.
+2021-01-19 04:38:24.965 [Thread-1] ERROR o.h.c.s.PlatformServiceLauncher - Error while calling quitquitquit
+org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:15020 [/127.0.0.1] failed: Connection refused (Connection refused)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.hypertrace.core.serviceframework.PlatformServiceLauncher.finalizeService(PlatformServiceLauncher.java:64) ~[platform-service-framework-0.1.18.jar:?]
+	at org.hypertrace.core.serviceframework.PlatformServiceLauncher.lambda$updateRuntime$0(PlatformServiceLauncher.java:46) ~[platform-service-framework-0.1.18.jar:?]
+	at java.lang.Thread.run(Unknown Source) [?:?]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[?:?]
+	at java.net.SocksSocketImpl.connect(Unknown Source) ~[?:?]
+	at java.net.Socket.connect(Unknown Source) ~[?:?]
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75) ~[httpclient-4.5.13.jar:4.5.13]
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142) ~[httpclient-4.5.13.jar:4.5.13]
+	... 13 more
