@@ -19,4 +19,10 @@ jobs:
         SLACK_MESSAGE: 'New helm charts for Hypertrace has been released :rocket:'
         SLACK_TITLE: Hypertrace has new release
         SLACK_USERNAME: Hypertrace release bot
-  
+      
+  release-notes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/release/
+        with:
+          gren-github-token: ${{ secrets.TOKEN }}
